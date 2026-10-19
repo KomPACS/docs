@@ -4,18 +4,31 @@ import Default from '@astrojs/starlight/components/SocialIcons.astro'
 const cs = Astro.locals.starlightRoute.locale === 'cs'
 ---
 
-<a class="site-link" href={cs ? 'https://kompacs.cz' : 'https://kompacs.cz/en/'}>kompacs.cz</a>
-<a class="site-link" href="https://demo.kompacs.cz">Demo</a>
 <Default />
+<a class="kp-pill" href="https://demo.kompacs.cz">Demo</a>
+<a class="kp-pill kp-pill-solid" href={cs ? 'https://kompacs.cz' : 'https://kompacs.cz/en/'}>kompacs.cz</a>
 
 <style>
-  .site-link {
-    color: var(--sl-color-text-accent);
+  .kp-pill {
+    padding: 0.35rem 0.9rem;
+    border: 1px solid var(--sl-color-hairline-shade);
+    border-radius: 999px;
+    color: var(--sl-color-white);
     font-size: var(--sl-text-sm);
+    font-weight: 600;
     text-decoration: none;
     white-space: nowrap;
   }
-  .site-link:hover {
-    color: var(--sl-color-white);
+  .kp-pill:hover {
+    border-color: var(--sl-color-accent);
+  }
+  .kp-pill-solid {
+    border-color: var(--sl-color-accent);
+    background-color: var(--sl-color-accent);
+    color: var(--sl-color-black);
+  }
+  .kp-pill-solid:hover {
+    background-color: var(--sl-color-accent-high);
+    border-color: var(--sl-color-accent-high);
   }
 </style>
