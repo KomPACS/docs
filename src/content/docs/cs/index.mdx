@@ -3,40 +3,29 @@ title: Technická dokumentace KOMPACS
 description: KOMPACS najde předchozí vyšetření, která lékař potřebuje před CT, MR, PET nebo indikačním seminářem. Prototyp, není zdravotnický prostředek.
 template: splash
 hero:
-  tagline: Před CT, MR, PET nebo indikačním seminářem KOMPACS najde předchozí vyšetření, která lékař potřebuje. Ověří PACS, označí, co chybí, a připraví žádosti.
+  tagline: Před CT, MR, PET nebo indikačním seminářem KOMPACS najde předchozí vyšetření, která lékař potřebuje.
   actions:
-    - text: Co je KOMPACS
-      link: /cs/overview/what-is-kompacs/
-      icon: right-arrow
-    - text: Otevřít demo
+    - text: Vyzkoušet demo
       link: https://demo.kompacs.cz
       icon: external
-      variant: minimal
+    - text: Architektura
+      link: /cs/explanation/architecture/
+      icon: right-arrow
+      variant: secondary
 ---
 
-import { Card, CardGrid, Aside } from '@astrojs/starlight/components'
+import { CardGrid, Aside } from '@astrojs/starlight/components'
+import IconLinkCard from '../../../components/IconLinkCard.astro'
 
 <Aside type="caution" title="Prototyp, není zdravotnický prostředek">
 KOMPACS je prototyp z hackathonu Rakathon 2026 (tým „404 Tumor Not Found“). Nepoužívejte ho pro klinická rozhodnutí.
 </Aside>
 
 <CardGrid>
-  <Card title="Přehled" icon="information">
-    Co KOMPACS dělá a proč. Pro lékaře, pojišťovny a investory. [Začít](/cs/overview/what-is-kompacs/).
-  </Card>
-  <Card title="Návody krok za krokem" icon="rocket">
-    Projděte veřejné demo. [Projít demo](/cs/tutorials/walk-the-demo/).
-  </Card>
-  <Card title="Postupy" icon="setting">
-    Nasazení v nemocnici. Napojení HL7, FHIR a PACS. Použití MCP serveru. [Nasazení](/cs/how-to/deploy-for-a-hospital/).
-  </Card>
-  <Card title="Reference" icon="open-book">
-    REST API, nástroje MCP, zdroje FHIR, slovník. [API](/cs/reference/api-overview/).
-  </Card>
-  <Card title="Vysvětlení" icon="puzzle">
-    Architektura, tok dat, bezpečnost, AI posouzení. [Architektura](/cs/explanation/architecture/).
-  </Card>
-  <Card title="Rozhodnutí" icon="list-format">
-    Záznamy architektonických rozhodnutí. [Všechna rozhodnutí](/cs/decisions/).
-  </Card>
+  <IconLinkCard icon="heart" title="Pro lékaře" description="Co KOMPACS dává radiologům, onkologům a členům indikačních seminářů." href="/cs/overview/for-clinicians/" />
+  <IconLinkCard icon="approve-check-circle" title="Pro pojišťovny" description="Jak data pojišťovny mohou obohatit kontrolu KOMPACS. KOMPACS funguje i bez nich." href="/cs/overview/for-insurers/" />
+  <IconLinkCard icon="analytics" title="Pro investory a partnery" description="Obchodní model, způsob nasazení a regulatorní cesta KOMPACS." href="/cs/overview/for-investors/" />
+  <IconLinkCard icon="server" title="Nasazení v nemocnici" description="Provoz jedné sady KOMPACS pro jednu nemocnici, on-premise nebo ve spravovaném tenantu v EU cloudu." href="/cs/how-to/deploy-for-a-hospital/" />
+  <IconLinkCard icon="puzzle" title="REST API" description="Přehled REST API KOMPACS. Generovaná reference vychází z kontraktu OpenAPI." href="/cs/reference/api-overview/" />
+  <IconLinkCard icon="comment-alt" title="Použití MCP serveru" description="Spuštění pacs-mcp a napojení MCP klienta na data případů přes FHIR a vektory IRIS." href="/cs/how-to/use-mcp-server/" />
 </CardGrid>

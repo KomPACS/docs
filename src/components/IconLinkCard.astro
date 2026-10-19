@@ -1,0 +1,48 @@
+---
+import { Icon } from '@astrojs/starlight/components'
+import type { StarlightIcon } from '@astrojs/starlight/types'
+
+interface Props {
+  title: string
+  description: string
+  href: string
+  icon: StarlightIcon
+}
+
+const { title, description, href, icon } = Astro.props
+---
+
+<a class="kp-card" href={href}>
+  <span class="kp-card-icon"><Icon name={icon} size="1.25rem" /></span>
+  <span class="kp-card-title">{title}</span>
+  <span class="kp-card-desc">{description}</span>
+</a>
+
+<style>
+  .kp-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 1.25rem;
+    color: var(--sl-color-gray-2);
+    text-decoration: none;
+  }
+  .kp-card-icon {
+    display: grid;
+    place-items: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    margin-bottom: 0.35rem;
+    border-radius: 10px;
+    background-color: var(--kp-active);
+    color: var(--sl-color-accent);
+  }
+  .kp-card-title {
+    color: var(--sl-color-white);
+    font-weight: 700;
+  }
+  .kp-card-desc {
+    font-size: var(--sl-text-sm);
+    line-height: 1.5;
+  }
+</style>

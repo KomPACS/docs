@@ -3,40 +3,29 @@ title: KOMPACS technical documentation
 description: KOMPACS finds the prior imaging a physician needs before a CT, MR, PET or tumor board. Prototype, not a medical device.
 template: splash
 hero:
-  tagline: Before a CT, MR, PET or tumor board, KOMPACS finds the prior imaging the physician needs. It checks PACS, flags what is missing and drafts the requests.
+  tagline: Before a CT, MR, PET or tumor board, KOMPACS finds the prior imaging the physician needs.
   actions:
-    - text: What is KOMPACS
-      link: /overview/what-is-kompacs/
-      icon: right-arrow
-    - text: Open the demo
+    - text: Try the demo
       link: https://demo.kompacs.cz
       icon: external
-      variant: minimal
+    - text: Architecture
+      link: /explanation/architecture/
+      icon: right-arrow
+      variant: secondary
 ---
 
-import { Card, CardGrid, Aside } from '@astrojs/starlight/components'
+import { CardGrid, Aside } from '@astrojs/starlight/components'
+import IconLinkCard from '../../components/IconLinkCard.astro'
 
 <Aside type="caution" title="Prototype, not a medical device">
 KOMPACS is a hackathon prototype (Rakathon 2026, team "404 Tumor Not Found"). Do not use it for clinical decisions.
 </Aside>
 
 <CardGrid>
-  <Card title="Overview" icon="information">
-    What KOMPACS does and why. For clinicians, insurers and investors. [Start here](/overview/what-is-kompacs/).
-  </Card>
-  <Card title="Tutorials" icon="rocket">
-    Walk the public demo step by step. [Walk the demo](/tutorials/walk-the-demo/).
-  </Card>
-  <Card title="How-to guides" icon="setting">
-    Deploy for a hospital. Connect HL7, FHIR and PACS feeds. Use the MCP server. [Deploy](/how-to/deploy-for-a-hospital/).
-  </Card>
-  <Card title="Reference" icon="open-book">
-    REST API, MCP tools, FHIR resources, glossary. [API](/reference/api-overview/).
-  </Card>
-  <Card title="Explanation" icon="puzzle">
-    Architecture, data flow, security, the AI judge. [Architecture](/explanation/architecture/).
-  </Card>
-  <Card title="Decisions" icon="list-format">
-    Architecture decision records. [All decisions](/decisions/).
-  </Card>
+  <IconLinkCard icon="heart" title="For clinicians" description="What KOMPACS gives radiologists, oncologists and tumor board members." href="/overview/for-clinicians/" />
+  <IconLinkCard icon="approve-check-circle" title="For insurers" description="How insurer data can enrich a KOMPACS check. KOMPACS works without it." href="/overview/for-insurers/" />
+  <IconLinkCard icon="analytics" title="For investors and partners" description="Business model, deployment shape and regulatory path of KOMPACS." href="/overview/for-investors/" />
+  <IconLinkCard icon="server" title="Deploy for a hospital" description="Run one KOMPACS stack for one hospital, on-premises or in a managed EU-cloud tenant." href="/how-to/deploy-for-a-hospital/" />
+  <IconLinkCard icon="puzzle" title="REST API" description="Overview of the KOMPACS REST API. The generated reference comes from the OpenAPI contract." href="/reference/api-overview/" />
+  <IconLinkCard icon="comment-alt" title="Use the MCP server" description="Run pacs-mcp and connect an MCP client to query KOMPACS case data over FHIR and IRIS vectors." href="/how-to/use-mcp-server/" />
 </CardGrid>
