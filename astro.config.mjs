@@ -13,10 +13,32 @@ const group = (label, cs, directory, collapsed = false) => ({
   items: [{ autogenerate: { directory } }],
 })
 
+const mermaidConfig = {
+  theme: 'base',
+  themeVariables: {
+    fontFamily: 'Arial, Helvetica, sans-serif',
+    background: '#ffffff',
+    primaryColor: '#e3f1ef',
+    primaryBorderColor: '#7dbfb6',
+    primaryTextColor: '#14232a',
+    secondaryColor: '#f3f6f7',
+    tertiaryColor: '#f8fbfb',
+    lineColor: '#0f6b66',
+    textColor: '#2c3d44',
+    clusterBkg: '#f8fbfb',
+    clusterBorder: '#dde5e7',
+    actorBkg: '#e3f1ef',
+    actorBorder: '#7dbfb6',
+    signalColor: '#0f6b66',
+    noteBkgColor: '#eeeafe',
+    noteBorderColor: '#4b33b5',
+  },
+}
+
 export default defineConfig({
   site: 'https://docs.kompacs.cz',
   markdown: {
-    rehypePlugins: [[rehypeMermaid, { strategy: 'inline-svg', mermaidConfig: { theme: 'neutral' } }]],
+    rehypePlugins: [[rehypeMermaid, { strategy: 'inline-svg', mermaidConfig }]],
   },
   integrations: [
     starlight({
@@ -42,6 +64,21 @@ export default defineConfig({
       },
       social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/KomPACS/docs' }],
       editLink: { baseUrl: 'https://github.com/KomPACS/docs/edit/main/' },
+      expressiveCode: {
+        themes: ['github-dark-default', 'github-light'],
+        styleOverrides: {
+          borderRadius: '12px',
+          borderColor: 'var(--sl-color-hairline)',
+          codeBackground: 'var(--kp-code-bg)',
+          frames: {
+            editorTabBarBackground: 'var(--kp-code-bar)',
+            editorActiveTabBackground: 'var(--kp-code-bg)',
+            terminalTitlebarBackground: 'var(--kp-code-bar)',
+            terminalBackground: 'var(--kp-code-bg)',
+            frameBoxShadowCssValue: 'none',
+          },
+        },
+      },
       customCss: ['./src/styles/custom.css'],
       routeMiddleware: './src/routeMiddleware.ts',
       components: {
