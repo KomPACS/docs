@@ -1,0 +1,42 @@
+---
+title: Technická dokumentace KOMPACS
+description: KOMPACS najde předchozí vyšetření, která lékař potřebuje před CT, MR, PET nebo indikačním seminářem. Prototyp, není zdravotnický prostředek.
+template: splash
+hero:
+  tagline: Před CT, MR, PET nebo indikačním seminářem KOMPACS najde předchozí vyšetření, která lékař potřebuje. Ověří PACS, označí, co chybí, a připraví žádosti.
+  actions:
+    - text: Co je KOMPACS
+      link: /cs/overview/what-is-kompacs/
+      icon: right-arrow
+    - text: Otevřít demo
+      link: https://demo.kompacs.cz
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid, Aside } from '@astrojs/starlight/components'
+
+<Aside type="caution" title="Prototyp, není zdravotnický prostředek">
+KOMPACS je prototyp z hackathonu Rakathon 2026 (tým „404 Tumor Not Found“). Nepoužívejte ho pro klinická rozhodnutí.
+</Aside>
+
+<CardGrid>
+  <Card title="Přehled" icon="information">
+    Co KOMPACS dělá a proč. Pro lékaře, pojišťovny a investory. [Začít](/cs/overview/what-is-kompacs/).
+  </Card>
+  <Card title="Návody krok za krokem" icon="rocket">
+    Projděte veřejné demo. [Projít demo](/cs/tutorials/walk-the-demo/).
+  </Card>
+  <Card title="Postupy" icon="setting">
+    Nasazení v nemocnici. Napojení HL7, FHIR a PACS. Použití MCP serveru. [Nasazení](/cs/how-to/deploy-for-a-hospital/).
+  </Card>
+  <Card title="Reference" icon="open-book">
+    REST API, nástroje MCP, zdroje FHIR, slovník. [API](/cs/reference/api-overview/).
+  </Card>
+  <Card title="Vysvětlení" icon="puzzle">
+    Architektura, tok dat, bezpečnost, AI posouzení. [Architektura](/cs/explanation/architecture/).
+  </Card>
+  <Card title="Rozhodnutí" icon="list-format">
+    Záznamy architektonických rozhodnutí. [Všechna rozhodnutí](/cs/decisions/).
+  </Card>
+</CardGrid>

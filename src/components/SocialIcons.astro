@@ -1,0 +1,21 @@
+---
+import Default from '@astrojs/starlight/components/SocialIcons.astro'
+
+const cs = Astro.locals.starlightRoute.locale === 'cs'
+---
+
+<a class="site-link" href={cs ? 'https://kompacs.cz' : 'https://kompacs.cz/en/'}>kompacs.cz</a>
+<a class="site-link" href="https://demo.kompacs.cz">Demo</a>
+<Default />
+
+<style>
+  .site-link {
+    color: var(--sl-color-text-accent);
+    font-size: var(--sl-text-sm);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .site-link:hover {
+    color: var(--sl-color-white);
+  }
+</style>

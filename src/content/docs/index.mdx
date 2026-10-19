@@ -1,0 +1,42 @@
+---
+title: KOMPACS technical documentation
+description: KOMPACS finds the prior imaging a physician needs before a CT, MR, PET or tumor board. Prototype, not a medical device.
+template: splash
+hero:
+  tagline: Before a CT, MR, PET or tumor board, KOMPACS finds the prior imaging the physician needs. It checks PACS, flags what is missing and drafts the requests.
+  actions:
+    - text: What is KOMPACS
+      link: /overview/what-is-kompacs/
+      icon: right-arrow
+    - text: Open the demo
+      link: https://demo.kompacs.cz
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid, Aside } from '@astrojs/starlight/components'
+
+<Aside type="caution" title="Prototype, not a medical device">
+KOMPACS is a hackathon prototype (Rakathon 2026, team "404 Tumor Not Found"). Do not use it for clinical decisions.
+</Aside>
+
+<CardGrid>
+  <Card title="Overview" icon="information">
+    What KOMPACS does and why. For clinicians, insurers and investors. [Start here](/overview/what-is-kompacs/).
+  </Card>
+  <Card title="Tutorials" icon="rocket">
+    Walk the public demo step by step. [Walk the demo](/tutorials/walk-the-demo/).
+  </Card>
+  <Card title="How-to guides" icon="setting">
+    Deploy for a hospital. Connect HL7, FHIR and PACS feeds. Use the MCP server. [Deploy](/how-to/deploy-for-a-hospital/).
+  </Card>
+  <Card title="Reference" icon="open-book">
+    REST API, MCP tools, FHIR resources, glossary. [API](/reference/api-overview/).
+  </Card>
+  <Card title="Explanation" icon="puzzle">
+    Architecture, data flow, security, the AI judge. [Architecture](/explanation/architecture/).
+  </Card>
+  <Card title="Decisions" icon="list-format">
+    Architecture decision records. [All decisions](/decisions/).
+  </Card>
+</CardGrid>

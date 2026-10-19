@@ -1,0 +1,22 @@
+---
+import Default from '@astrojs/starlight/components/Footer.astro'
+
+const cs = Astro.locals.starlightRoute.locale === 'cs'
+---
+
+<Default />
+<p class="site-footer">
+  {cs ? 'Prototyp, není zdravotnický prostředek.' : 'Prototype, not a medical device.'}
+  <a href={cs ? 'https://kompacs.cz' : 'https://kompacs.cz/en/'}>kompacs.cz</a>
+  · <a href="https://demo.kompacs.cz">demo.kompacs.cz</a>
+  · <a href="https://github.com/KomPACS">GitHub</a>
+</p>
+
+<style>
+  .site-footer {
+    margin-top: 2rem;
+    font-size: var(--sl-text-xs);
+    color: var(--sl-color-gray-3);
+    text-align: center;
+  }
+</style>
