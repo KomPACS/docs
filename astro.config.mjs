@@ -93,6 +93,7 @@ export default defineConfig({
       plugins: [
         starlightSidebarTopics([
           {
+            id: 'overview',
             label: { en: 'Overview', cs: 'Přehled' },
             link: '/overview/what-is-kompacs/',
             items: [group('Overview', 'Přehled', 'overview'), group('Tutorials', 'Návody krok za krokem', 'tutorials')],
@@ -113,7 +114,7 @@ export default defineConfig({
             link: '/explanation/architecture/',
             items: [group('Explanation', 'Vysvětlení', 'explanation'), group('Decisions', 'Rozhodnutí', 'decisions', true)],
           },
-        ], { topics: { api: ['/reference/api', '/reference/api/**', '/cs/reference/api', '/cs/reference/api/**'] } }),
+        ], { topics: { overview: ['/', '/cs'], api: ['/reference/api', '/reference/api/**', '/cs/reference/api', '/cs/reference/api/**'] } }),
         starlightLinksValidator({ errorOnLocalLinks: true, exclude: ['/reference/api/**', '/cs/reference/api/**'] }),
         starlightOpenAPI([
           { base: 'reference/api', schema: './contract/openapi.json', sidebar: { label: 'API (generated)' } },

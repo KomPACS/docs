@@ -2,8 +2,7 @@
 import Default from '@astrojs/starlight/components/Header.astro'
 
 const { topics } = Astro.locals.starlightSidebarTopics
-const { id, locale } = Astro.locals.starlightRoute
-const isHome = id === '' || id === 'cs'
+const { locale } = Astro.locals.starlightRoute
 const label = locale === 'cs' ? 'Sekce dokumentace' : 'Documentation sections'
 ---
 
@@ -11,14 +10,11 @@ const label = locale === 'cs' ? 'Sekce dokumentace' : 'Documentation sections'
   <div class="kp-header-top"><Default /></div>
   <nav class="kp-tabs" aria-label={label}>
     {
-      topics.map((topic, index) => {
-        const current = topic.isCurrent || (isHome && index === 0)
-        return (
-          <a href={topic.link} class:list={{ current }} aria-current={current ? 'page' : undefined}>
-            {topic.label}
-          </a>
-        )
-      })
+      topics.map((topic) => (
+        <a href={topic.link} class:list={{ current: topic.isCurrent }} aria-current={topic.isCurrent ? 'page' : undefined}>
+          {topic.label}
+        </a>
+      ))
     }
   </nav>
 </div>

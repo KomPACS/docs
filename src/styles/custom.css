@@ -123,6 +123,11 @@ site-search button[data-open-modal] {
 }
 .starlight-sidebar-topics a {
   border-radius: 10px;
+  padding: 0.35rem 0.75rem;
+}
+.starlight-sidebar-topics a.starlight-sidebar-topics-current {
+  background-color: var(--kp-active);
+  color: var(--sl-color-accent);
 }
 
 /* Sidebar */
@@ -144,13 +149,13 @@ site-search button[data-open-modal] {
   text-transform: uppercase;
   color: var(--sl-color-gray-3);
 }
-#starlight__sidebar a {
+#starlight__sidebar .top-level a {
   padding: 0.35rem 0.75rem;
   border-radius: 10px;
   color: var(--sl-color-gray-2);
   font-size: var(--sl-text-sm);
 }
-#starlight__sidebar a:hover {
+#starlight__sidebar .top-level a:hover {
   color: var(--sl-color-white);
 }
 #starlight__sidebar a[aria-current='page'] {
@@ -287,6 +292,7 @@ h1#_top {
   padding-block: 2.5rem 1.5rem;
 }
 .hero h1 {
+  font-size: clamp(2.25rem, 4vw, 3.25rem);
   font-weight: 800;
   letter-spacing: -0.03em;
 }
