@@ -19,6 +19,19 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'KOMPACS docs',
+      logo: { src: './src/assets/logo.svg' },
+      favicon: '/favicon.svg',
+      head: [
+        { tag: 'link', attrs: { rel: 'preconnect', href: 'https://fonts.googleapis.com' } },
+        { tag: 'link', attrs: { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: true } },
+        {
+          tag: 'link',
+          attrs: {
+            rel: 'stylesheet',
+            href: 'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap',
+          },
+        },
+      ],
       description: 'KOMPACS technical documentation. Prototype, not a medical device.',
       defaultLocale: 'root',
       locales: {
