@@ -11,19 +11,17 @@ KOMPACS has three parts: IRIS for Health, an API and a web UI. IRIS holds all st
 
 ```mermaid
 flowchart LR
-  subgraph HOSP["Hospital network"]
-    NIS["NIS / RIS"]
-    PACS["PACS"]
-    subgraph STACK["KOMPACS stack (one per hospital)"]
-      subgraph IRIS["IRIS for Health"]
-        PROD["Interop production<br/>orders · PACS feed"]
-        FHIR[("FHIR R4 server")]
-        SQL[("SQL projection<br/>+ vector tables")]
-      end
-      API["API<br/>local embedding model"]
-      WEB["Web UI"]
-      MCP["pacs-mcp"]
+  NIS["NIS / RIS"]
+  PACS["PACS"]
+  subgraph STACK["KOMPACS stack (one per hospital)"]
+    subgraph IRIS["IRIS for Health"]
+      PROD["Interop production<br/>orders · PACS feed"]
+      FHIR[("FHIR R4 server")]
+      SQL[("SQL projection<br/>+ vector tables")]
     end
+    API["API<br/>local embedding model"]
+    WEB["Web UI"]
+    MCP["pacs-mcp"]
   end
   LLM["LLM<br/>EU region"]
   USER(["Collector, Doctor"])

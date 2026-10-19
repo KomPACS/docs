@@ -9,19 +9,17 @@ KOMPACS má tři části: IRIS for Health, API a webové UI. IRIS drží vešker
 
 ```mermaid
 flowchart LR
-  subgraph HOSP["Síť nemocnice"]
-    NIS["NIS / RIS"]
-    PACS["PACS"]
-    subgraph STACK["Sada KOMPACS (jedna na nemocnici)"]
-      subgraph IRIS["IRIS for Health"]
-        PROD["Produkce<br/>objednávky · PACS feed"]
-        FHIR[("FHIR R4 server")]
-        SQL[("SQL projekce<br/>+ vektory")]
-      end
-      API["API<br/>lokální model embeddingů"]
-      WEB["Webové UI"]
-      MCP["pacs-mcp"]
+  NIS["NIS / RIS"]
+  PACS["PACS"]
+  subgraph STACK["Sada KOMPACS (jedna na nemocnici)"]
+    subgraph IRIS["IRIS for Health"]
+      PROD["Produkce<br/>objednávky · PACS feed"]
+      FHIR[("FHIR R4 server")]
+      SQL[("SQL projekce<br/>+ vektory")]
     end
+    API["API<br/>lokální model embeddingů"]
+    WEB["Webové UI"]
+    MCP["pacs-mcp"]
   end
   LLM["LLM<br/>EU region"]
   USER(["Koordinátor, lékař"])

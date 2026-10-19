@@ -41,6 +41,7 @@ export default defineConfig({
       social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/KomPACS/docs' }],
       editLink: { baseUrl: 'https://github.com/KomPACS/docs/edit/main/' },
       customCss: ['./src/styles/custom.css'],
+      routeMiddleware: './src/routeMiddleware.ts',
       components: {
         SocialIcons: './src/components/SocialIcons.astro',
         Footer: './src/components/Footer.astro',
