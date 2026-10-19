@@ -11,32 +11,34 @@ KOMPACS has three parts: IRIS for Health, an API and a web UI. IRIS holds all st
 
 ```mermaid
 flowchart LR
-  NIS["NIS / RIS"]
-  PACS["PACS"]
-  subgraph STACK["KOMPACS stack (one per hospital)"]
+  subgraph SRC["Sources"]
+    NIS["NIS / RIS"]
+    PACS["PACS"]
+    INS["Insurer statement"]
+  end
+  subgraph STACK["KOMPACS stack"]
     subgraph IRIS["IRIS for Health"]
-      PROD["Interop production<br/>orders · PACS feed"]
-      FHIR[("FHIR R4 server")]
-      SQL[("SQL projection<br/>+ vector tables")]
+      direction TB
+      PROD["Interop production"] --> FHIR[("FHIR R4")] --> SQL[("SQL + vectors")]
     end
-    API["API<br/>local embedding model"]
+    API["API"]
     WEB["Web UI"]
     MCP["pacs-mcp"]
   end
-  LLM["LLM<br/>EU region"]
-  USER(["Collector, Doctor"])
-  AGENT["MCP client"]
-
-  NIS -->|"HL7 v2 ORM^O01"| PROD
-  PACS -->|"availability feed"| PROD
-  PROD --> FHIR --> SQL
-  USER --> WEB --> API
-  API <--> FHIR
-  API <--> SQL
-  API <-->|"report text"| LLM
-  AGENT --> MCP
-  MCP --> FHIR
-  MCP --> SQL
+  subgraph OUT["Users, clients"]
+    USER(["Collector, Doctor"])
+    AGENT(["MCP client"])
+    LLM["EU LLM"]
+  end
+  NIS -->|HL7| IRIS
+  PACS -->|CSV| IRIS
+  INS --> API
+  IRIS <--> API
+  IRIS --> MCP
+  API --> WEB
+  WEB --> USER
+  MCP --> AGENT
+  API --> LLM
 ```
 
 | Component | Technology | Role |

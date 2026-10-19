@@ -9,32 +9,34 @@ KOMPACS má tři části: IRIS for Health, API a webové UI. IRIS drží vešker
 
 ```mermaid
 flowchart LR
-  NIS["NIS / RIS"]
-  PACS["PACS"]
-  subgraph STACK["Sada KOMPACS (jedna na nemocnici)"]
+  subgraph SRC["Zdroje"]
+    NIS["NIS / RIS"]
+    PACS["PACS"]
+    INS["Výpis pojišťovny"]
+  end
+  subgraph STACK["Sada KOMPACS"]
     subgraph IRIS["IRIS for Health"]
-      PROD["Produkce<br/>objednávky · PACS feed"]
-      FHIR[("FHIR R4 server")]
-      SQL[("SQL projekce<br/>+ vektory")]
+      direction TB
+      PROD["Produkce"] --> FHIR[("FHIR R4")] --> SQL[("SQL + vektory")]
     end
-    API["API<br/>lokální model embeddingů"]
+    API["API"]
     WEB["Webové UI"]
     MCP["pacs-mcp"]
   end
-  LLM["LLM<br/>EU region"]
-  USER(["Koordinátor, lékař"])
-  AGENT["MCP klient"]
-
-  NIS -->|"HL7 v2 ORM^O01"| PROD
-  PACS -->|"dostupnost"| PROD
-  PROD --> FHIR --> SQL
-  USER --> WEB --> API
-  API <--> FHIR
-  API <--> SQL
-  API <-->|"text zpráv"| LLM
-  AGENT --> MCP
-  MCP --> FHIR
-  MCP --> SQL
+  subgraph OUT["Uživatelé, klienti"]
+    USER(["Koordinátor, lékař"])
+    AGENT(["MCP klient"])
+    LLM["EU LLM"]
+  end
+  NIS -->|HL7| IRIS
+  PACS -->|CSV| IRIS
+  INS --> API
+  IRIS <--> API
+  IRIS --> MCP
+  API --> WEB
+  WEB --> USER
+  MCP --> AGENT
+  API --> LLM
 ```
 
 | Komponenta | Technologie | Role |

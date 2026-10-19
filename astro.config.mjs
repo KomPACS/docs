@@ -15,8 +15,11 @@ const group = (label, cs, directory, collapsed = false) => ({
 
 const mermaidConfig = {
   theme: 'base',
+  flowchart: { nodeSpacing: 16, rankSpacing: 16, padding: 8, diagramPadding: 4 },
+  sequence: { wrap: true, width: 100, actorMargin: 16, messageFontSize: 15, actorFontSize: 15, noteFontSize: 14 },
   themeVariables: {
     fontFamily: 'Arial, Helvetica, sans-serif',
+    fontSize: '16px',
     background: '#ffffff',
     primaryColor: '#e3f1ef',
     primaryBorderColor: '#7dbfb6',

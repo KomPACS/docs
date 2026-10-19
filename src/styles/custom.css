@@ -333,3 +333,10 @@ h1#_top {
   background-color: var(--kp-night) !important;
   fill: var(--kp-night) !important;
 }
+:root:not([data-theme='light']) svg[id^='mermaid'] .labelBox {
+  fill: #0f4f4a !important;
+  stroke: var(--kp-tint) !important;
+}
+:root:not([data-theme='light']) svg[id^='mermaid'] .loopLine {
+  stroke: var(--kp-tint) !important;
+}
