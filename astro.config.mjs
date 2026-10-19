@@ -46,9 +46,10 @@ export default defineConfig({
         Footer: './src/components/Footer.astro',
       },
       plugins: [
-        starlightLinksValidator({ errorOnLocalLinks: true }),
+        starlightLinksValidator({ errorOnLocalLinks: true, exclude: ['/reference/api/**', '/cs/reference/api/**'] }),
         starlightOpenAPI([
           { base: 'reference/api', schema: './contract/openapi.json', sidebar: { label: 'API (generated)' } },
+          { base: 'cs/reference/api', schema: './contract/openapi.json', sidebar: { label: 'API (generováno)' } },
         ]),
       ],
       sidebar: [
