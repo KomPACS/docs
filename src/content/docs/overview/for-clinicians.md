@@ -1,35 +1,35 @@
 ---
-title: For clinicians
-description: What KomPACS gives radiologists, oncologists and tumor board members.
+title: Pro lékaře
+description: Co KomPACS dává radiologům, onkologům a členům indikačních seminářů.
 sidebar:
   order: 2
 ---
 
-:::caution[Prototype, not a medical device]
-KomPACS supports the search for prior imaging. It makes no diagnosis.
+:::caution[Prototyp, není zdravotnický prostředek]
+KomPACS pomáhá hledat předchozí vyšetření. Nestanovuje diagnózu.
 :::
 
-## What you get
+## Co dostanete
 
-- A list of relevant priors for the scheduled exam or MDT. Each prior has a status: available, missing report, missing, or place unknown.
-- For each verdict: a short reason, the source sentence from the report and a Modrá kniha ČOS citation with page number.
-- Priors that only report text names. A NIS or PACS search does not find these.
-- A duplicate alert when the scheduled exam repeats the same exam within 6 weeks.
-- A case summary that you can read before the reading or the tumor board.
+- Seznam relevantních předchozích vyšetření pro plánované vyšetření nebo MDT. Každé má stav: dostupné, chybí popis, chybí, nebo místo neznámé.
+- U každého posouzení: krátký důvod, zdrojovou větu ze zprávy a citaci Modré knihy ČOS se stránkou.
+- Vyšetření, která zmiňuje jen text zprávy. Vyhledávání v NIS ani v PACS je nenajde.
+- Upozornění na duplicitu, když plánované vyšetření opakuje stejné vyšetření do 6 týdnů.
+- Souhrn případu ke čtení před popisem nebo seminářem.
 
-## Who does what
+## Kdo co dělá
 
-| Role | Task |
+| Role | Úkol |
 |---|---|
-| Doctor | Reads the case summary. Can ask for a removed prior again. |
-| Collector | Confirms verdicts. Approves and sends requests. Calls other hospitals. |
+| Lékař | Čte souhrn případu. Může znovu vyžádat vyřazené vyšetření. |
+| Koordinátor/ka | Potvrzuje posouzení. Schvaluje a odesílá žádosti. Volá do jiných nemocnic. |
 
-The Collector decision always wins over the AI verdict.
+Rozhodnutí koordinátora vždy platí před posouzením AI.
 
-## What the AI judge does not do
+## Co AI nedělá
 
-- It does not read images.
-- It does not suggest treatment.
-- It does not send anything without a person's approval.
+- Nečte snímky.
+- Nenavrhuje léčbu.
+- Nic neodešle bez schválení člověkem.
 
-Details: [AI judge and reasoning trace](/explanation/ai-judge/).
+Podrobnosti: [AI posouzení a záznam postupu](/explanation/ai-judge/).

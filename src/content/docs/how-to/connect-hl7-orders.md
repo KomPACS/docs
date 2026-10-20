@@ -1,48 +1,30 @@
 ---
-title: Connect HL7 v2 orders
-description: Send scheduled CT, MR and PET orders from NIS/RIS into the IRIS production as HL7 v2 ORM^O01.
+title: Napojení objednávek HL7 v2
+description: Posílání plánovaných CT, MR a PET z NIS/RIS do produkce IRIS jako HL7 v2 ORM^O01.
 sidebar:
   order: 2
 ---
 
-A scheduled exam reaches KomPACS as an HL7 v2 `ORM^O01` order. IRIS converts it to a FHIR `ServiceRequest` with its built-in path.
-
-## Path
+Plánované vyšetření přijde do KomPACS jako objednávka HL7 v2 `ORM^O01`. IRIS ji vestavěnou cestou převede na FHIR `ServiceRequest`.
 
 ```text
 NIS/RIS ──ORM^O01──> HL7.Orders.In ──> ZHL7.OrderToSDA ──> SDA3 ──> ZHL7.SDA3ToFHIR ──> FHIR ServiceRequest
 ```
 
-| Production item | Class |
-|---|---|
-| `HL7.Orders.In` | `EnsLib.HL7.Service.HTTPService` (POC). Production: an MLLP/TCP service with TLS. |
-| HL7 to SDA3 | `ZHL7.OrderToSDA`. It calls `HS.Gateway.HL7.HL7ToSDA3` and passes PID-3 as the patient resource ID. |
-| SDA3 to FHIR | `HS.FHIR.DTL.Util.HC.SDA3.FHIR.Process` with transform class `ZHL7.SDA3ToFHIR`. It skips the Patient entry, so the existing Patient stays. |
-| FHIR write | `HS.FHIRServer.Interop.Operation` |
+## Pravidla zprávy
 
-## Message rules
+- PID-3: ID pacienta. Musí se rovnat FHIR `Patient.id`.
+- ORC-2: číslo objednávky. Stane se `ServiceRequest.identifier` typu `PLAC`.
+- OBR-4: modalita se systémem `DCM` (např. `CT`, `MR`, `PT`).
 
-- PID-3: the patient ID. It must equal the FHIR `Patient.id`.
-- ORC-2: the placer order number. It becomes a `ServiceRequest.identifier` of type `PLAC`.
-- OBR-4: the modality with coding system `DCM` (for example `CT`, `MR`, `PT`). IRIS maps it to the DICOM OID system `urn:oid:1.2.840.10008.2.16.4`.
+## Postup
 
-## Steps
+1. Nahrajte dvě třídy ObjectScript do FHIR namespace.
+2. Přidejte službu, proces a operaci do produkce. Spusťte ji.
+3. Nasměrujte rozhraní NIS/RIS na službu.
+4. Pošlete testovací objednávku.
+5. Výsledek ověřte hledáním FHIR, ne podle ACK: `GET /fhir/r4/ServiceRequest?identifier=<číslo>`.
 
-1. Load the two ObjectScript classes into the FHIR namespace.
-2. Add the business service, the process and the operation to the production. Start it.
-3. Point the NIS/RIS interface engine at the business service.
-4. Send one test order.
-5. Check the result with a FHIR search, not the ACK:
+V produkci použijte MLLP s TLS místo HTTP. Nastavte znakovou sadu, jinak se česká diakritika poškodí.
 
-   ```http
-   GET /fhir/r4/ServiceRequest?identifier=<placer number>
-   ```
-
-   The HTTP service ACKs on receipt (`MSA|CA`). The `ServiceRequest` is searchable about 1 s later.
-
-## Known limits
-
-- Each order also creates one `Organization` from MSH.
-- The POC HTTP service decodes the body as Latin-1. Czech diacritics in free-text fields break. Set the character set in the production before you send Czech text.
-
-Why: [HL7 orders via the IRIS production](/decisions/hl7-orders-via-iris-production/).
+Podrobnosti: [anglická verze](/en/how-to/connect-hl7-orders/).

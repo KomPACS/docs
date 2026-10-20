@@ -6,9 +6,9 @@ import starlightLlmsTxt from 'starlight-llms-txt'
 import starlightOpenAPI, { openAPISidebarGroups } from 'starlight-openapi'
 import starlightSidebarTopics from 'starlight-sidebar-topics'
 
-const group = (label, cs, directory, collapsed = false) => ({
+const group = (label, en, directory, collapsed = false) => ({
   label,
-  translations: { cs },
+  translations: { en },
   collapsed,
   items: [{ autogenerate: { directory } }],
 })
@@ -62,8 +62,8 @@ export default defineConfig({
       description: 'KomPACS technical documentation. Prototype, not a medical device.',
       defaultLocale: 'root',
       locales: {
-        root: { label: 'English', lang: 'en' },
-        cs: { label: 'Čeština', lang: 'cs' },
+        root: { label: 'Čeština', lang: 'cs' },
+        en: { label: 'English', lang: 'en' },
       },
       social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/KomPACS/docs' }],
       editLink: { baseUrl: 'https://github.com/KomPACS/docs/edit/main/' },
@@ -96,12 +96,12 @@ export default defineConfig({
             id: 'overview',
             label: { en: 'Overview', cs: 'Přehled' },
             link: '/overview/what-is-kompacs/',
-            items: [group('Overview', 'Přehled', 'overview'), group('Tutorials', 'Návody krok za krokem', 'tutorials')],
+            items: [group('Přehled', 'Overview', 'overview'), group('Návody krok za krokem', 'Tutorials', 'tutorials')],
           },
           {
             label: { en: 'Guides', cs: 'Návody' },
             link: '/how-to/deploy-for-a-hospital/',
-            items: [group('How-to guides', 'Postupy', 'how-to')],
+            items: [group('Postupy', 'How-to guides', 'how-to')],
           },
           {
             id: 'api',
@@ -112,13 +112,13 @@ export default defineConfig({
           {
             label: { en: 'Architecture', cs: 'Architektura' },
             link: '/explanation/architecture/',
-            items: [group('Explanation', 'Vysvětlení', 'explanation'), group('Decisions', 'Rozhodnutí', 'decisions', true)],
+            items: [group('Vysvětlení', 'Explanation', 'explanation'), group('Rozhodnutí', 'Decisions', 'decisions', true)],
           },
-        ], { topics: { overview: ['/', '/cs'], api: ['/reference/api', '/reference/api/**', '/cs/reference/api', '/cs/reference/api/**'] } }),
-        starlightLinksValidator({ errorOnLocalLinks: true, exclude: ['/reference/api/**', '/cs/reference/api/**'] }),
+        ], { topics: { overview: ['/', '/en'], api: ['/reference/api', '/reference/api/**', '/en/reference/api', '/en/reference/api/**'] } }),
+        starlightLinksValidator({ errorOnLocalLinks: true, exclude: ['/reference/api/**', '/en/reference/api/**'] }),
         starlightOpenAPI([
-          { base: 'reference/api', schema: './contract/openapi.json', sidebar: { label: 'API (generated)' } },
-          { base: 'cs/reference/api', schema: './contract/openapi.json', sidebar: { label: 'API (generováno)' } },
+          { base: 'reference/api', schema: './contract/openapi.json', sidebar: { label: 'API (generováno)' } },
+          { base: 'en/reference/api', schema: './contract/openapi.json', sidebar: { label: 'API (generated)' } },
         ]),
         starlightLlmsTxt(),
       ],

@@ -1,25 +1,25 @@
 ---
-title: For insurers
-description: How insurer data can enrich a KomPACS check. KomPACS works without it.
+title: Pro pojišťovny
+description: Jak data pojišťovny mohou obohatit kontrolu KomPACS. KomPACS funguje i bez nich.
 sidebar:
   order: 3
 ---
 
 :::note
-KomPACS works without insurer data. Insurer data is optional enrichment.
+KomPACS funguje bez dat pojišťovny. Data pojišťovny jsou volitelné obohacení.
 :::
 
-## Why insurer data helps
+## Proč data pojišťovny pomáhají
 
-A hospital sees only its own exams. A patient can have earlier CT or MR scans at other hospitals. An insurer knows where and when each billed exam took place. In the 40 demo cases, 14 priors were known only from insurer data. None of them was in the hospital PACS.
+Nemocnice vidí jen svá vyšetření. Pacient mohl mít CT nebo MR v jiné nemocnici. Pojišťovna ví, kde a kdy proběhlo každé vykázané vyšetření. Ve 40 ukázkových případech znala 14 vyšetření jen data pojišťovny. Žádné z nich nebylo v PACS nemocnice.
 
-## How KomPACS uses it
+## Jak je KomPACS používá
 
-- The source is the patient's own consented statement: the insurer account statement ("Výpis pojištěnce"). Every insured person can get this statement from their insurer today.
-- KomPACS reads exam date, type and place from it. It adds these as candidate priors.
-- The AI judge marks insurer-only priors as uncertain. The Collector decides.
-- In the prototype, a mock FHIR server holds simulated statement data. The prototype has no live insurer connection.
+- Zdrojem je vlastní výpis pacienta, který pacient poskytne se souhlasem: „Výpis pojištěnce“. Každý pojištěnec si ho dnes může od pojišťovny vyžádat.
+- KomPACS z výpisu čte datum, typ a místo vyšetření. Přidá je jako kandidátní předchozí vyšetření.
+- AI označí vyšetření známá jen z výpisu jako nejistá. Rozhodne koordinátor/ka.
+- Prototyp používá simulovaná data výpisu na testovacím FHIR serveru. Nemá živé napojení na pojišťovnu.
 
-## Outlook
+## Výhled
 
-The EU European Health Data Space regulation (EHDS, Regulation (EU) 2025/327) adds cross-border access to patient summaries from 2029. Medical images and imaging reports follow from 26 March 2031. KomPACS uses FHIR R4, so it can read these sources when they are available.
+Nařízení EU o evropském prostoru pro zdravotní data (EHDS, nařízení (EU) 2025/327) přidá přeshraniční přístup k pacientským souhrnům od roku 2029. Snímky a zprávy ze zobrazovacích vyšetření následují od 26. března 2031. KomPACS používá FHIR R4, takže tyto zdroje může číst, až budou dostupné.

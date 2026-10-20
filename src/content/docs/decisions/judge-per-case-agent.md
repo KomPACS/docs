@@ -1,18 +1,10 @@
 ---
-title: One judge call per case
-description: The AI judges all candidate priors of a trigger in one agent call. Rules live in the prompt.
+title: Jedno posouzení na případ
+description: AI posoudí všechna kandidátní vyšetření spouštěče jedním voláním. Pravidla jsou v promptu.
 ---
 
-## Decision
+- Jedno volání agenta posoudí všechna kandidátní vyšetření. Pravidla seznamu (2 nejnovější, strop, vstupní vyšetření) potřebují všechna najednou.
+- Klinická pravidla jsou vodítkem v českém promptu. Kód jen ověřuje výstup.
+- Každé posouzení má 3–5 českých kroků (`kroky`). Lékaři potřebují čitelné vysvětlení česky.
 
-- One agent call judges all candidate priors of a trigger. List rules (2 newest, a cap, the baseline window) need all priors at once.
-- The clinical rules are guidance in a Czech prompt. No rule code runs over the candidate list. NIS exams have no body region, so region rules need the report text anyway.
-- Code only validates the output: unknown IDs dropped, missing or invalid verdicts become uncertain, quotes must appear in their source.
-- The agent calls `search_guideline` and `search_reports` and writes its own queries.
-- Each verdict has `kroky`: 3–5 short Czech steps that name the searches and the evidence. Doctors need a readable account in Czech. The model returns only an English reasoning summary.
-
-## Consequences
-
-- Verdicts are cached per trigger and the set of judged candidate IDs. Collector decisions do not change the key.
-- Fallback verdicts are not cached.
-- `kroky` is the model's stated explanation, not its hidden reasoning.
+**Důsledky:** Cache podle spouštěče a sady kandidátů. Záložní posouzení se neukládají.

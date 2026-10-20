@@ -1,0 +1,33 @@
+---
+title: KomPACS technical documentation
+description: KomPACS finds the prior imaging a physician needs before a CT, MR, PET or tumor board. Prototype, not a medical device.
+tableOfContents: false
+prev: false
+next: false
+hero:
+  tagline: Before a CT, MR, PET or tumor board, KomPACS finds the prior imaging the physician needs.
+  actions:
+    - text: Try the demo
+      link: https://demo.kompacs.cz
+      icon: external
+    - text: Architecture
+      link: /en/explanation/architecture/
+      icon: right-arrow
+      variant: secondary
+---
+
+import { CardGrid, Aside } from '@astrojs/starlight/components'
+import IconLinkCard from '../../../components/IconLinkCard.astro'
+
+<Aside type="caution" title="Prototype, not a medical device">
+KomPACS is a hackathon prototype (Rakathon 2026, team "404 Tumor Not Found"). Do not use it for clinical decisions.
+</Aside>
+
+<CardGrid>
+  <IconLinkCard icon="heart" title="For clinicians" description="What KomPACS gives radiologists, oncologists and tumor board members." href="/en/overview/for-clinicians/" />
+  <IconLinkCard icon="approve-check-circle" title="For insurers" description="How insurer data can enrich a KomPACS check. KomPACS works without it." href="/en/overview/for-insurers/" />
+  <IconLinkCard icon="analytics" title="For investors and partners" description="Business model, deployment shape and regulatory path of KomPACS." href="/en/overview/for-investors/" />
+  <IconLinkCard icon="server" title="Deploy for a hospital" description="Run one KomPACS stack for one hospital, on-premises or in a managed EU-cloud tenant." href="/en/how-to/deploy-for-a-hospital/" />
+  <IconLinkCard icon="puzzle" title="REST API" description="Overview of the KomPACS REST API. The generated reference comes from the OpenAPI contract." href="/en/reference/api-overview/" />
+  <IconLinkCard icon="comment-alt" title="Use the MCP server" description="Run pacs-mcp and connect an MCP client to query KomPACS case data over FHIR and IRIS vectors." href="/en/how-to/use-mcp-server/" />
+</CardGrid>

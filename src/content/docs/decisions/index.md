@@ -1,26 +1,26 @@
 ---
-title: Decisions
-description: Architecture decision records of KomPACS.
+title: Rozhodnutí
+description: Záznamy architektonických rozhodnutí KomPACS.
 sidebar:
   order: 0
 ---
 
-Each record states one decision, the options the team rejected and the consequences. The team made them during the hackathon, 16–17 October 2026.
+Každý záznam uvádí jedno rozhodnutí, odmítnuté možnosti a důsledky. Tým je přijal během hackathonu 16.–17. října 2026. Podrobnější znění jsou v anglické verzi.
 
-| Area | Decision |
+| Oblast | Rozhodnutí |
 |---|---|
-| Deployment | [One stack per hospital, integrator-owned](/decisions/deployment-shape/) |
-| Ingest | [HL7 orders via the IRIS production](/decisions/hl7-orders-via-iris-production/) |
-| Ingest | [PACS feed through IRIS, patching ImagingStudy](/decisions/pacs-feed/) |
-| FHIR | [ImagingStudy normalization](/decisions/imagingstudy-normalization/) |
-| FHIR | [FHIR SQL Builder for SQL reads](/decisions/fhir-sql-builder/) |
-| FHIR | [Case summary is a versioned Composition](/decisions/case-summary-composition/) |
-| FHIR | [Requests and their channels](/decisions/requests-and-channels/) |
-| AI | [One judge call per case](/decisions/judge-per-case-agent/) |
-| AI | [Modrá kniha ČOS citations](/decisions/guideline-citations/) |
-| AI | [Vector search: local model, IRIS index](/decisions/vector-search/) |
-| AI | [Trace and re-judge history in IRIS](/decisions/llm-trace-and-rejudge/) |
-| Contacts | [ePACS directory for facility contacts](/decisions/epacs-directory/) |
-| MCP | [Standalone MCP server over FHIR](/decisions/mcp-server-standalone/) |
-| Data | [Simulated body part of the scheduled exam](/decisions/simulated-body-part/) |
-| UI | [Queue, request and timeline display rules](/decisions/ui-decisions/) |
+| Nasazení | [Jedna sada na nemocnici, vlastní ji integrátor](/decisions/deployment-shape/) |
+| Příjem dat | [Objednávky HL7 přes produkci IRIS](/decisions/hl7-orders-via-iris-production/) |
+| Příjem dat | [PACS feed přes IRIS, patch ImagingStudy](/decisions/pacs-feed/) |
+| FHIR | [Normalizace ImagingStudy](/decisions/imagingstudy-normalization/) |
+| FHIR | [FHIR SQL Builder pro čtení přes SQL](/decisions/fhir-sql-builder/) |
+| FHIR | [Souhrn případu jako verzovaná Composition](/decisions/case-summary-composition/) |
+| FHIR | [Žádosti a jejich kanály](/decisions/requests-and-channels/) |
+| AI | [Jedno posouzení na případ](/decisions/judge-per-case-agent/) |
+| AI | [Citace Modré knihy ČOS](/decisions/guideline-citations/) |
+| AI | [Vektorové vyhledávání](/decisions/vector-search/) |
+| AI | [Záznam a historie posouzení v IRIS](/decisions/llm-trace-and-rejudge/) |
+| Kontakty | [Adresář ePACS](/decisions/epacs-directory/) |
+| MCP | [Samostatný MCP server nad FHIR](/decisions/mcp-server-standalone/) |
+| Data | [Simulovaná část těla](/decisions/simulated-body-part/) |
+| UI | [Pravidla zobrazení fronty, žádostí a časové osy](/decisions/ui-decisions/) |

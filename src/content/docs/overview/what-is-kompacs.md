@@ -1,39 +1,39 @@
 ---
-title: What is KomPACS
-description: KomPACS (KOMparátor PACS) checks prior imaging before a CT, MR, PET or tumor board.
+title: Co je KomPACS
+description: KomPACS (KOMparátor PACS) kontroluje předchozí vyšetření před CT, MR, PET nebo indikačním seminářem.
 sidebar:
   order: 1
 ---
 
-:::caution[Prototype, not a medical device]
-KomPACS is a hackathon prototype. Do not use it for clinical decisions.
+:::caution[Prototyp, není zdravotnický prostředek]
+KomPACS je prototyp z hackathonu. Nepoužívejte ho pro klinická rozhodnutí.
 :::
 
-KomPACS means *KOMparátor PACS*. Team "404 Tumor Not Found" built it at Rakathon 2026. The challenge came from FN Motol and Nemocnice Na Homolce.
+KomPACS znamená *KOMparátor PACS*. Vytvořil ho tým „404 Tumor Not Found“ na Rakathonu 2026. Zadání připravily FN Motol a Nemocnice Na Homolce.
 
-## The problem
+## Problém
 
-Before a CT, MR or PET scan, the radiologist compares the new images with earlier ones. Before a tumor board (MDT), the specialists need the same history. Today a person reads old reports, searches PACS and phones other hospitals. Many priors are named only in report text. A search in the hospital information system (NIS) or in PACS does not find them.
+Před CT, MR nebo PET radiolog srovnává nové snímky se staršími. Před indikačním seminářem (MDT) potřebují specialisté stejnou historii. Dnes člověk čte staré zprávy, hledá v PACS a volá do jiných nemocnic. Mnohá předchozí vyšetření jsou jen v textu zpráv. Vyhledávání v NIS ani v PACS je nenajde.
 
-## What KomPACS does
+## Co KomPACS dělá
 
-1. **Trigger.** A scheduled CT, MR or PET order, or a patient on an MDT list, starts a check.
-2. **Find.** KomPACS collects candidate priors from NIS records, from report text and, if the patient gives it, from the insurer account statement.
-3. **Judge.** An AI judge labels each candidate prior: relevant, not relevant or uncertain. It cites the Czech oncology guideline (Modrá kniha ČOS) and the source sentence.
-4. **Check PACS.** KomPACS shows which relevant priors have images in PACS.
-5. **Request.** For each missing prior, KomPACS drafts a request to the other hospital: e-mail, phone or FHIR.
-6. **Summarize.** KomPACS writes a case summary as a FHIR `Composition`.
+1. **Spouštěč.** Kontrolu spustí plánované CT, MR nebo PET, nebo pacient na seznamu MDT.
+2. **Hledání.** KomPACS sebere kandidátní předchozí vyšetření z NIS, z textu zpráv a, pokud ho pacient poskytne, z výpisu pojištěnce.
+3. **Posouzení.** AI označí každé vyšetření: relevantní, nerelevantní nebo nejisté. Cituje Modrou knihu ČOS a zdrojovou větu.
+4. **Kontrola PACS.** KomPACS ukáže, která relevantní vyšetření mají snímky v PACS.
+5. **Žádost.** Pro chybějící vyšetření připraví žádost do jiné nemocnice: e-mail, telefon nebo FHIR.
+6. **Souhrn.** KomPACS zapíše souhrn případu jako FHIR `Composition`.
 
-A person (the Collector) confirms every verdict and every request. KomPACS makes no diagnosis.
+Každé posouzení a každou žádost potvrdí člověk (koordinátor/ka). KomPACS nestanovuje diagnózu.
 
-## Built on
+## Technologie
 
-- InterSystems IRIS for Health: FHIR R4 server, HL7 v2 → SDA3 → FHIR conversion, interoperability productions, FHIR SQL Builder, vector search.
-- An LLM in the EU Data Zone. Patient text goes to no other model.
-- An MCP server. Any MCP client can query the case data.
+- InterSystems IRIS for Health: FHIR R4 server, převod HL7 v2 → SDA3 → FHIR, interoperabilní produkce, FHIR SQL Builder, vektorové vyhledávání.
+- LLM v EU Data Zone. Text o pacientovi nejde do žádného jiného modelu.
+- MCP server. Data případu může číst libovolný MCP klient.
 
-## Links
+## Odkazy
 
-- Landing page: [kompacs.cz](https://kompacs.cz/en/)
-- Public demo with synthetic data: [demo.kompacs.cz](https://demo.kompacs.cz)
-- Impact numbers: [Impact](/overview/impact/)
+- Web: [kompacs.cz](https://kompacs.cz)
+- Veřejné demo se syntetickými daty: [demo.kompacs.cz](https://demo.kompacs.cz)
+- Čísla dopadu: [Dopad](/overview/impact/)

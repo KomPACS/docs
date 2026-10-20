@@ -1,39 +1,39 @@
 ---
-title: For investors and partners
-description: Business model, deployment shape and regulatory path of KomPACS.
+title: Pro investory a partnery
+description: Obchodní model, způsob nasazení a regulatorní cesta KomPACS.
 sidebar:
   order: 4
 ---
 
-:::caution[Prototype, not a medical device]
-KomPACS is a proof of concept (POC). It is not certified.
+:::caution[Prototyp, není zdravotnický prostředek]
+KomPACS je ověření konceptu (POC). Není certifikovaný.
 :::
 
-## Value
+## Přínos
 
-- Fewer repeated CT and MR exams.
-- Less staff time to collect priors.
-- Priors that a NIS or PACS search does not find.
+- Méně opakovaných CT a MR.
+- Méně času personálu na shánění předchozích vyšetření.
+- Vyšetření, která vyhledávání v NIS ani v PACS nenajde.
 
-Numbers from the demo cases: [Impact](/overview/impact/).
+Čísla z ukázkových případů: [Dopad](/overview/impact/).
 
 ## Model
 
-- After the hackathon, a licensed Czech IT integrator owns, distributes and supports the product.
-- The hospital pays the integrator.
-- One container stack per hospital: on-premises, or a managed EU-cloud tenant that the integrator operates.
-- The hospital changes nothing. KomPACS connects through standards the hospital already has: HL7 v2 orders, FHIR R4, a PACS availability feed.
+- Po hackathonu produkt vlastní, distribuuje a podporuje licencovaný český IT integrátor.
+- Nemocnice platí integrátorovi.
+- Jedna sada kontejnerů na nemocnici: on-premise, nebo spravovaný tenant v EU cloudu, který provozuje integrátor.
+- Nemocnice nic nemění. KomPACS se napojí přes standardy, které nemocnice už má: objednávky HL7 v2, FHIR R4, feed dostupnosti z PACS.
 
-## Regulatory line
+## Regulace
 
-- Intended purpose: find and fetch prior imaging. KomPACS makes no diagnosis.
-- A person confirms every relevance verdict.
-- A human in the loop alone does not take software out of the EU Medical Device Regulation (MDR, see MDCG 2019-11). If MDR applies (Rule 11, likely class IIa), the integrator certifies the product.
+- Určený účel: najít a vyžádat předchozí vyšetření. KomPACS nestanovuje diagnózu.
+- Každé posouzení relevance potvrdí člověk.
+- Samotný člověk v procesu software nevyjímá z nařízení MDR (viz MDCG 2019-11). Pokud se MDR uplatní (pravidlo 11, pravděpodobně třída IIa), produkt certifikuje integrátor.
 
-## Next steps
+## Další kroky
 
-1. Pilot at one hospital with real orders.
-2. Second hospital.
-3. Certification, if MDR applies.
+1. Pilot v jedné nemocnici s reálnými objednávkami.
+2. Druhá nemocnice.
+3. Certifikace, pokud se MDR uplatní.
 
-Details: [Deploy for a hospital](/how-to/deploy-for-a-hospital/), [Deployment shape](/decisions/deployment-shape/).
+Podrobnosti: [Nasazení v nemocnici](/how-to/deploy-for-a-hospital/), [Způsob nasazení](/decisions/deployment-shape/).

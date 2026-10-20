@@ -1,65 +1,65 @@
 ---
-title: Walk the demo
-description: Open a demo case, read the AI verdicts and handle a missing prior in the public KomPACS demo.
+title: Projít demo
+description: Otevřete ukázkový případ, přečtěte posouzení AI a vyřiďte chybějící vyšetření ve veřejném demu KomPACS.
 sidebar:
   order: 1
 ---
 
-In this tutorial you walk one case in the public demo. You need only a browser. The demo uses synthetic patients. It runs fully in your browser and stores nothing on a server.
+V tomto návodu projdete jeden případ ve veřejném demu. Stačí prohlížeč. Demo používá syntetické pacienty. Běží celé v prohlížeči a nic neukládá na server.
 
 :::note
-The demo UI is in Czech. Button names below are the Czech labels. The demo is in active development, so labels can change.
+Demo se aktivně vyvíjí. Názvy tlačítek se mohou změnit.
 :::
 
-## 1. Open the queue
+## 1. Otevřete frontu
 
-1. Open [demo.kompacs.cz](https://demo.kompacs.cz).
-2. The queue ("Fronta k vyřízení") lists triggers: scheduled exams and MDT meetings. The nearest date is at the top.
-3. Each card shows how many candidate priors have images in PACS ("V PACS X z Y").
+1. Otevřete [demo.kompacs.cz](https://demo.kompacs.cz).
+2. „Fronta k vyřízení“ ukazuje spouštěče: plánovaná vyšetření a MDT. Nejbližší datum je nahoře.
+3. Každá karta ukazuje, kolik kandidátních vyšetření má snímky v PACS („V PACS X z Y“).
 
-## 2. Pick a demo case
+## 2. Vyberte ukázkový případ
 
-The sidebar has a list of demo cases ("Ukázkové případy"). Each case shows one feature:
+V postranním panelu jsou „Ukázkové případy“. Každý ukazuje jednu funkci:
 
-| Demo case (Czech) | What it shows |
+| Ukázkový případ | Co ukazuje |
 |---|---|
-| Předchozí vyšetření nalezená ve zprávách, žádosti e-mailem i telefonem | Priors named only in report text. Requests by e-mail and phone. |
-| Pojišťovna zná vyšetření z jiné nemocnice | A prior known only from the insurer account statement. |
-| MDT: žádost nedoručena, urgovat | A request with no images after 2 working days. |
-| Upozornění na duplicitu | The scheduled exam repeats an exam within 6 weeks. |
-| Dlouhá historie, relevantní jen některá vyšetření | Many priors. The AI keeps only the relevant ones. |
+| Předchozí vyšetření nalezená ve zprávách, žádosti e-mailem i telefonem | Vyšetření jen v textu zpráv. Žádosti e-mailem a telefonem. |
+| Pojišťovna zná vyšetření z jiné nemocnice | Vyšetření známé jen z výpisu pojištěnce. |
+| MDT: žádost nedoručena, urgovat | Žádost bez snímků po 2 pracovních dnech. |
+| Upozornění na duplicitu | Plánované vyšetření opakuje vyšetření do 6 týdnů. |
+| Dlouhá historie, relevantní jen některá vyšetření | Mnoho vyšetření. AI ponechá jen relevantní. |
 
-Open the first case.
+Otevřete první případ.
 
-## 3. Read the case
+## 3. Přečtěte případ
 
-1. The patient bar shows age band, diagnosis and the trigger.
-2. The timeline shows all events of the patient in date order. The imaging lane shows the candidate priors.
-3. Each prior tile shows its status and the relevance verdict.
+1. Lišta pacienta ukazuje věkové pásmo, diagnózu a spouštěč.
+2. Časová osa ukazuje všechny události pacienta podle data. Řádek zobrazování ukazuje kandidátní vyšetření.
+3. Každá dlaždice vyšetření ukazuje stav a posouzení relevance.
 
-## 4. Check how the AI decided
+## 4. Zjistěte, jak AI rozhodla
 
-1. Open the AI log on a prior tile.
-2. Read the steps ("Postup AI"). They name the searches that the judge ran.
-3. Find the source sentence from the report and the Modrá kniha ČOS citation with page.
-4. Optional: click "Posoudit znovu" to ask for a new verdict. Add a note. The old verdict stays in the history.
+1. Otevřete AI záznam na dlaždici vyšetření.
+2. Přečtěte „Postup AI“. Uvádí vyhledávání, která AI provedla.
+3. Najděte zdrojovou větu ze zprávy a citaci Modré knihy ČOS se stránkou.
+4. Volitelně: klikněte na „Posoudit znovu“ a přidejte poznámku. Staré posouzení zůstane v historii.
 
-## 5. Handle a missing prior
+## 5. Vyřiďte chybějící vyšetření
 
-1. Find a prior with status "chybí" (missing).
-2. Check the contact of the other hospital. Confirm it.
-3. Approve the drafted e-mail request. Or mark a phone request as requested.
-4. Click the demo button that simulates the arrival in PACS. The prior turns available.
+1. Najděte vyšetření se stavem „chybí“.
+2. Zkontrolujte kontakt na jinou nemocnici. Potvrďte ho.
+3. Schvalte připravený e-mail. Nebo označte telefonickou žádost jako vyžádanou.
+4. Klikněte na demo tlačítko, které simuluje doručení do PACS. Vyšetření je dostupné.
 
-## 6. See the totals
+## 6. Podívejte se na souhrn
 
-Open the "Přehled" tab. It shows studies per modality and year, and how many are in PACS.
+Otevřete záložku „Přehled“. Ukazuje vyšetření podle modality a roku a kolik jich je v PACS.
 
-## What you learned
+## Co jste se naučili
 
-- A trigger starts a check.
-- KomPACS finds priors in NIS records, report text and insurer data.
-- The AI judge gives a verdict with evidence. The Collector decides.
-- A missing prior becomes a request. The arrival in PACS closes it.
+- Spouštěč zahájí kontrolu.
+- KomPACS najde vyšetření v NIS, v textu zpráv a v datech pojišťovny.
+- AI posoudí relevanci s důkazy. Rozhodne koordinátor/ka.
+- Chybějící vyšetření se stane žádostí. Doručení do PACS ji uzavře.
 
-Next: [Start your own check](/tutorials/start-a-check/).
+Dále: [Spustit kontrolu](/tutorials/start-a-check/).

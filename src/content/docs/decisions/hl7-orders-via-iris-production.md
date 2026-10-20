@@ -1,24 +1,10 @@
 ---
-title: HL7 orders via the IRIS production
-description: Orders use the built-in IRIS HL7 → SDA3 → FHIR path.
+title: Objednávky HL7 přes produkci IRIS
+description: Objednávky používají vestavěnou cestu IRIS HL7 → SDA3 → FHIR.
 ---
 
-## Decision
+Produkce používá vestavěné třídy IRIS pro HL7 → SDA3 → FHIR. Cílem je využít integraci IRIS, ne ji psát znovu. Dvě malé třídy ObjectScript doplňují mezery: `ZHL7.OrderToSDA` předá PID-3 jako ID pacienta, `ZHL7.SDA3ToFHIR` přeskočí zápis pacienta.
 
-The production uses `EnsLib.HL7.Service.HTTPService`, `HS.Gateway.HL7.HL7ToSDA3`, `HS.FHIR.DTL.Util.HC.SDA3.FHIR.Process` and `HS.FHIRServer.Interop.Operation`. The goal: use IRIS integration, do not rebuild it.
+**Odmítnuto:** Python, který sám vytvoří `ServiceRequest`. Funguje, ale obchází interoperabilitu IRIS.
 
-Two small ObjectScript classes close the gaps:
-
-- `HS.Gateway.HL7.HL7ToSDA3` is a helper, not a business host. `ZHL7.OrderToSDA` calls it and passes PID-3 as the patient resource ID.
-- `SDA3ToFHIR` would create a new Patient or overwrite the existing one. The subclass `ZHL7.SDA3ToFHIR` skips the Patient entry.
-
-## Options
-
-- MLLP/TCP input: the POC host exposed only the IRIS web and superserver ports. Production uses MLLP with TLS.
-- Python builds the `ServiceRequest`: works, but bypasses IRIS interoperability.
-
-## Consequences
-
-- Each order also creates one `Organization` from MSH.
-- The HTTP service ACKs on receipt. An ACK does not prove that the `ServiceRequest` exists. Check with a FHIR search.
-- OBR-4 codes the modality with `DCM`. IRIS maps it to the DICOM OID system.
+**Důsledky:** ACK nepotvrzuje existenci `ServiceRequest`. Ověřte ho hledáním FHIR. V produkci MLLP s TLS.
