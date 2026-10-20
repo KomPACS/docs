@@ -1,6 +1,6 @@
 ---
 title: AI posouzení a záznam postupu
-description: Jak AI v KOMPACS posuzuje relevanci, cituje Modrou knihu ČOS a zaznamenává kroky.
+description: Jak AI v KomPACS posuzuje relevanci, cituje Modrou knihu ČOS a zaznamenává kroky.
 sidebar:
   order: 4
 ---

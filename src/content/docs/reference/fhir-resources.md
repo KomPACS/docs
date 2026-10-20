@@ -1,6 +1,6 @@
 ---
 title: FHIR resources
-description: The FHIR R4 resources, IDs and tags that KOMPACS reads and writes.
+description: The FHIR R4 resources, IDs and tags that KomPACS reads and writes.
 sidebar:
   order: 3
 ---
@@ -19,7 +19,7 @@ sidebar:
 | `ExplanationOfBenefit` | Exams from the insurer statement (optional source) |
 | `Organization`, `Endpoint` | Other hospitals and their FHIR address |
 
-## Written by KOMPACS
+## Written by KomPACS
 
 | Resource | ID or tag | Content |
 |---|---|---|
@@ -32,7 +32,7 @@ sidebar:
 | `Basic` | `review-*` | Collector decisions |
 | `Organization` | `EPACS-<AE title>` | Facility contact from the ePACS directory |
 
-Demo data that KOMPACS adds carries the tag `simulated`.
+Demo data that KomPACS adds carries the tag `simulated`.
 
 ## Composition shape
 

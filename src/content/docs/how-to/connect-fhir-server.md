@@ -1,13 +1,13 @@
 ---
 title: Connect a FHIR server
-description: Point the KOMPACS API and MCP server at a FHIR R4 server, and load the patient record into it.
+description: Point the KomPACS API and MCP server at a FHIR R4 server, and load the patient record into it.
 sidebar:
   order: 4
 ---
 
-KOMPACS reads and writes plain FHIR R4 REST. IRIS for Health is the reference server. The MCP server works with any FHIR R4 server.
+KomPACS reads and writes plain FHIR R4 REST. IRIS for Health is the reference server. The MCP server works with any FHIR R4 server.
 
-## Point KOMPACS at the server
+## Point KomPACS at the server
 
 | Variable | Use |
 |---|---|
@@ -15,7 +15,7 @@ KOMPACS reads and writes plain FHIR R4 REST. IRIS for Health is the reference se
 | `IRIS_HOST` | IRIS host for SQL and vector search |
 | `INSURER_BASE` | Optional. Base URL of the insurer statement server. |
 
-## Resources KOMPACS needs
+## Resources KomPACS needs
 
 - `Patient`, `Condition`
 - `DocumentReference` or `DiagnosticReport` with report text

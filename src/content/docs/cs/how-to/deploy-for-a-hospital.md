@@ -1,6 +1,6 @@
 ---
 title: Nasazení v nemocnici
-description: Provoz jedné sady KOMPACS pro jednu nemocnici, on-premise nebo ve spravovaném tenantu v EU cloudu.
+description: Provoz jedné sady KomPACS pro jednu nemocnici, on-premise nebo ve spravovaném tenantu v EU cloudu.
 sidebar:
   order: 1
 ---

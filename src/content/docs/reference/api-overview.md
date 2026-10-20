@@ -1,11 +1,11 @@
 ---
 title: REST API
-description: Overview of the KOMPACS REST API. The generated reference comes from the OpenAPI contract.
+description: Overview of the KomPACS REST API. The generated reference comes from the OpenAPI contract.
 sidebar:
   order: 1
 ---
 
-The KOMPACS API is a FastAPI service. The UI calls it on the same origin under `/api/`. The contract is an OpenAPI 3.1 document: [openapi.json](https://github.com/KomPACS/docs/blob/main/contract/openapi.json).
+The KomPACS API is a FastAPI service. The UI calls it on the same origin under `/api/`. The contract is an OpenAPI 3.1 document: [openapi.json](https://github.com/KomPACS/docs/blob/main/contract/openapi.json).
 
 The generated pages are under [API (generated)](/reference/api/).
 

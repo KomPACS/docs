@@ -5,7 +5,7 @@ sidebar:
   order: 3
 ---
 
-KOMPACS musí vědět, zda jsou snímky každého vyšetření v PACS. POC používá soubor CSV.
+KomPACS musí vědět, zda jsou snímky každého vyšetření v PACS. POC používá soubor CSV.
 
 ```text
 Export z PACS (CSV) ──HTTP──> PACS.Csv.In ──> ZHL7.PacsCsvToFHIR (embedded Python) ──> FHIR PATCH ImagingStudy

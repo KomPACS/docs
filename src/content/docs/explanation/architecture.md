@@ -1,11 +1,11 @@
 ---
 title: Architecture
-description: The KOMPACS components and how they connect, in the POC and in production.
+description: The KomPACS components and how they connect, in the POC and in production.
 sidebar:
   order: 1
 ---
 
-KOMPACS has three parts: IRIS for Health, an API and a web UI. IRIS holds all state. The API is stateless in production.
+KomPACS has three parts: IRIS for Health, an API and a web UI. IRIS holds all state. The API is stateless in production.
 
 ## Components
 
@@ -16,7 +16,7 @@ flowchart LR
     PACS["PACS"]
     INS["Insurer statement"]
   end
-  subgraph STACK["KOMPACS stack"]
+  subgraph STACK["KomPACS stack"]
     subgraph IRIS["IRIS for Health"]
       direction TB
       PROD["Interop production"] --> FHIR[("FHIR R4")] --> SQL[("SQL + vectors")]

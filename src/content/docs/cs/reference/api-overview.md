@@ -1,11 +1,11 @@
 ---
 title: REST API
-description: Přehled REST API KOMPACS. Generovaná reference vychází z kontraktu OpenAPI.
+description: Přehled REST API KomPACS. Generovaná reference vychází z kontraktu OpenAPI.
 sidebar:
   order: 1
 ---
 
-API KOMPACS je služba FastAPI. UI ji volá na stejném originu pod `/api/`. Kontrakt je dokument OpenAPI 3.1: [openapi.json](https://github.com/KomPACS/docs/blob/main/contract/openapi.json).
+API KomPACS je služba FastAPI. UI ji volá na stejném originu pod `/api/`. Kontrakt je dokument OpenAPI 3.1: [openapi.json](https://github.com/KomPACS/docs/blob/main/contract/openapi.json).
 
 Generované stránky (anglicky): [API (generováno)](/cs/reference/api/).
 

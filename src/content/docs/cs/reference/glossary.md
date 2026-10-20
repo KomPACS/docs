@@ -1,6 +1,6 @@
 ---
 title: Slovník
-description: Pojmy KOMPACS a jejich význam.
+description: Pojmy KomPACS a jejich význam.
 sidebar:
   order: 4
 ---
@@ -20,7 +20,7 @@ Jeden význam na pojem.
 | Relevantní předchozí vyšetření | Vyšetření, se kterým lékař potřebuje srovnávat. |
 | Vstupní vyšetření | Vyšetření před začátkem léčby. Slouží k hodnocení odpovědi. |
 | Datum prvozáchytu | Datum prvního záznamu o nádoru. Od něj začíná okno hledání. |
-| Souhrn případu | Výstup KOMPACS: kontext pacienta, relevantní vyšetření, jejich stav, co chybí, další kroky. |
+| Souhrn případu | Výstup KomPACS: kontext pacienta, relevantní vyšetření, jejich stav, co chybí, další kroky. |
 | Zpráva, popis | Text lékaře. Radiologický popis je textové čtení vyšetření. |
 | Indikující osoba | Kdo objedná vyšetření nebo spustí kontrolu. |
 
@@ -56,5 +56,5 @@ Jeden význam na pojem.
 | Produkce | Interoperabilní pipeline IRIS: služby, procesy, operace. |
 | FHIR SQL Builder | Nástroj IRIS, který promítá zdroje FHIR do SQL tabulek. Schéma `pacs`. |
 | Embedding, vektorové vyhledávání | Vektor významu textu; hledání nejbližších textů přes `VECTOR_COSINE`. |
-| MCP | Model Context Protocol. Server KOMPACS: `pacs-mcp`. |
+| MCP | Model Context Protocol. Server KomPACS: `pacs-mcp`. |
 | EHDS | Evropský prostor pro zdravotní data, nařízení (EU) 2025/327. |

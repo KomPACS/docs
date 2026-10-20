@@ -1,6 +1,6 @@
 ---
 title: Deploy for a hospital
-description: Run one KOMPACS stack for one hospital, on-premises or in a managed EU-cloud tenant.
+description: Run one KomPACS stack for one hospital, on-premises or in a managed EU-cloud tenant.
 sidebar:
   order: 1
 ---

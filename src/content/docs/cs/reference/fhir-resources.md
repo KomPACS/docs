@@ -1,6 +1,6 @@
 ---
 title: Zdroje FHIR
-description: Zdroje FHIR R4, ID a tagy, které KOMPACS čte a zapisuje.
+description: Zdroje FHIR R4, ID a tagy, které KomPACS čte a zapisuje.
 sidebar:
   order: 3
 ---

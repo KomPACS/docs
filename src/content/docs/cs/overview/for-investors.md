@@ -1,12 +1,12 @@
 ---
 title: Pro investory a partnery
-description: Obchodní model, způsob nasazení a regulatorní cesta KOMPACS.
+description: Obchodní model, způsob nasazení a regulatorní cesta KomPACS.
 sidebar:
   order: 4
 ---
 
 :::caution[Prototyp, není zdravotnický prostředek]
-KOMPACS je ověření konceptu (POC). Není certifikovaný.
+KomPACS je ověření konceptu (POC). Není certifikovaný.
 :::
 
 ## Přínos
@@ -22,11 +22,11 @@ KOMPACS je ověření konceptu (POC). Není certifikovaný.
 - Po hackathonu produkt vlastní, distribuuje a podporuje licencovaný český IT integrátor.
 - Nemocnice platí integrátorovi.
 - Jedna sada kontejnerů na nemocnici: on-premise, nebo spravovaný tenant v EU cloudu, který provozuje integrátor.
-- Nemocnice nic nemění. KOMPACS se napojí přes standardy, které nemocnice už má: objednávky HL7 v2, FHIR R4, feed dostupnosti z PACS.
+- Nemocnice nic nemění. KomPACS se napojí přes standardy, které nemocnice už má: objednávky HL7 v2, FHIR R4, feed dostupnosti z PACS.
 
 ## Regulace
 
-- Určený účel: najít a vyžádat předchozí vyšetření. KOMPACS nestanovuje diagnózu.
+- Určený účel: najít a vyžádat předchozí vyšetření. KomPACS nestanovuje diagnózu.
 - Každé posouzení relevance potvrdí člověk.
 - Samotný člověk v procesu software nevyjímá z nařízení MDR (viz MDCG 2019-11). Pokud se MDR uplatní (pravidlo 11, pravděpodobně třída IIa), produkt certifikuje integrátor.
 

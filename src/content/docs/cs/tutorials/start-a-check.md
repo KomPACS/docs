@@ -1,6 +1,6 @@
 ---
 title: Spustit kontrolu
-description: Spusťte novou kontrolu pro plánované CT, MR, PET nebo MDT ve veřejném demu KOMPACS.
+description: Spusťte novou kontrolu pro plánované CT, MR, PET nebo MDT ve veřejném demu KomPACS.
 sidebar:
   order: 2
 ---

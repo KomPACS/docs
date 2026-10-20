@@ -1,6 +1,6 @@
 ---
 title: AI judge and reasoning trace
-description: How the KOMPACS AI judge decides relevance, cites Modrá kniha ČOS and records its steps.
+description: How the KomPACS AI judge decides relevance, cites Modrá kniha ČOS and records its steps.
 sidebar:
   order: 4
 ---

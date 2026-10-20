@@ -1,6 +1,6 @@
 ---
 title: Security and data protection
-description: How KOMPACS handles patient data, access and the supply chain, in the POC and in production.
+description: How KomPACS handles patient data, access and the supply chain, in the POC and in production.
 sidebar:
   order: 3
 ---
@@ -15,7 +15,7 @@ The POC ran on a pseudonymized hackathon dataset. The POC environment no longer 
 - Embeddings run on a local model inside the API container. Report text goes to no embedding service.
 - The vector table stores no text. It holds only a FHIR reference and the vector.
 - The MCP server refuses to start without a data declaration: `synthetic` or `eu-data-zone`.
-- Demo data that KOMPACS adds is tagged `simulated` in FHIR.
+- Demo data that KomPACS adds is tagged `simulated` in FHIR.
 - The public demo uses synthetic patients only. It runs in the browser and has no server.
 - Insurer data is optional. Its source is the patient's own consented statement.
 

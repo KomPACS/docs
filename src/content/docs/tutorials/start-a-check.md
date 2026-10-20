@@ -1,6 +1,6 @@
 ---
 title: Start a check
-description: Start a new check for a planned CT, MR, PET or MDT in the public KOMPACS demo.
+description: Start a new check for a planned CT, MR, PET or MDT in the public KomPACS demo.
 sidebar:
   order: 2
 ---

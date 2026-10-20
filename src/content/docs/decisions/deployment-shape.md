@@ -1,13 +1,13 @@
 ---
 title: One stack per hospital, integrator-owned
-description: KOMPACS runs as one container stack per hospital, on-premises or in a managed EU-cloud tenant.
+description: KomPACS runs as one container stack per hospital, on-premises or in a managed EU-cloud tenant.
 ---
 
 ## Decision
 
 - One product: the same container stack (IRIS for Health, API, UI) for every hospital.
 - Two ways to run it: on-premises at the hospital, or a managed EU-cloud tenant per hospital that the integrator operates. No patient data is shared between tenants.
-- The hospital changes nothing. KOMPACS connects through standards the hospital already has: HL7 v2 orders, FHIR R4, a PACS availability feed. Later DICOM and ePACS for the fetch.
+- The hospital changes nothing. KomPACS connects through standards the hospital already has: HL7 v2 orders, FHIR R4, a PACS availability feed. Later DICOM and ePACS for the fetch.
 - Central part without patient data: the verified-contact directory of hospitals.
 - After the hackathon, a licensed Czech IT integrator owns, distributes and supports the product. The hospital pays the integrator.
 

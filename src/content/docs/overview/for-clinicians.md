@@ -1,12 +1,12 @@
 ---
 title: For clinicians
-description: What KOMPACS gives radiologists, oncologists and tumor board members.
+description: What KomPACS gives radiologists, oncologists and tumor board members.
 sidebar:
   order: 2
 ---
 
 :::caution[Prototype, not a medical device]
-KOMPACS supports the search for prior imaging. It makes no diagnosis.
+KomPACS supports the search for prior imaging. It makes no diagnosis.
 :::
 
 ## What you get

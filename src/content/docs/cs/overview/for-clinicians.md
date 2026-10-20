@@ -1,12 +1,12 @@
 ---
 title: Pro lékaře
-description: Co KOMPACS dává radiologům, onkologům a členům indikačních seminářů.
+description: Co KomPACS dává radiologům, onkologům a členům indikačních seminářů.
 sidebar:
   order: 2
 ---
 
 :::caution[Prototyp, není zdravotnický prostředek]
-KOMPACS pomáhá hledat předchozí vyšetření. Nestanovuje diagnózu.
+KomPACS pomáhá hledat předchozí vyšetření. Nestanovuje diagnózu.
 :::
 
 ## Co dostanete

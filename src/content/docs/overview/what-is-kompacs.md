@@ -1,30 +1,30 @@
 ---
-title: What is KOMPACS
-description: KOMPACS (KOMparátor PACS) checks prior imaging before a CT, MR, PET or tumor board.
+title: What is KomPACS
+description: KomPACS (KOMparátor PACS) checks prior imaging before a CT, MR, PET or tumor board.
 sidebar:
   order: 1
 ---
 
 :::caution[Prototype, not a medical device]
-KOMPACS is a hackathon prototype. Do not use it for clinical decisions.
+KomPACS is a hackathon prototype. Do not use it for clinical decisions.
 :::
 
-KOMPACS means *KOMparátor PACS*. Team "404 Tumor Not Found" built it at Rakathon 2026. The challenge came from FN Motol and Nemocnice Na Homolce.
+KomPACS means *KOMparátor PACS*. Team "404 Tumor Not Found" built it at Rakathon 2026. The challenge came from FN Motol and Nemocnice Na Homolce.
 
 ## The problem
 
 Before a CT, MR or PET scan, the radiologist compares the new images with earlier ones. Before a tumor board (MDT), the specialists need the same history. Today a person reads old reports, searches PACS and phones other hospitals. Many priors are named only in report text. A search in the hospital information system (NIS) or in PACS does not find them.
 
-## What KOMPACS does
+## What KomPACS does
 
 1. **Trigger.** A scheduled CT, MR or PET order, or a patient on an MDT list, starts a check.
-2. **Find.** KOMPACS collects candidate priors from NIS records, from report text and, if the patient gives it, from the insurer account statement.
+2. **Find.** KomPACS collects candidate priors from NIS records, from report text and, if the patient gives it, from the insurer account statement.
 3. **Judge.** An AI judge labels each candidate prior: relevant, not relevant or uncertain. It cites the Czech oncology guideline (Modrá kniha ČOS) and the source sentence.
-4. **Check PACS.** KOMPACS shows which relevant priors have images in PACS.
-5. **Request.** For each missing prior, KOMPACS drafts a request to the other hospital: e-mail, phone or FHIR.
-6. **Summarize.** KOMPACS writes a case summary as a FHIR `Composition`.
+4. **Check PACS.** KomPACS shows which relevant priors have images in PACS.
+5. **Request.** For each missing prior, KomPACS drafts a request to the other hospital: e-mail, phone or FHIR.
+6. **Summarize.** KomPACS writes a case summary as a FHIR `Composition`.
 
-A person (the Collector) confirms every verdict and every request. KOMPACS makes no diagnosis.
+A person (the Collector) confirms every verdict and every request. KomPACS makes no diagnosis.
 
 ## Built on
 

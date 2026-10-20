@@ -5,7 +5,7 @@ sidebar:
   order: 2
 ---
 
-A scheduled exam reaches KOMPACS as an HL7 v2 `ORM^O01` order. IRIS converts it to a FHIR `ServiceRequest` with its built-in path.
+A scheduled exam reaches KomPACS as an HL7 v2 `ORM^O01` order. IRIS converts it to a FHIR `ServiceRequest` with its built-in path.
 
 ## Path
 

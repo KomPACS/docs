@@ -1,6 +1,6 @@
 ---
 title: Impact
-description: Measured results on the 40 KOMPACS demo cases, and the estimates behind them.
+description: Measured results on the 40 KomPACS demo cases, and the estimates behind them.
 sidebar:
   order: 5
 ---
@@ -27,5 +27,5 @@ These values are assumptions. A clinical partner must confirm them.
 | Assumption | Value | Effect on 40 cases |
 |---|---|---|
 | Manual check per case today | 15 min | 10 h |
-| Check per case with KOMPACS | 3 min | 2 h |
-| Calls per missing prior today | 2 | 68 calls. KOMPACS drafts the request instead. |
+| Check per case with KomPACS | 3 min | 2 h |
+| Calls per missing prior today | 2 | 68 calls. KomPACS drafts the request instead. |
