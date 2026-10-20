@@ -1,29 +1,29 @@
 ---
-title: Start a check
-description: Start a new check for a planned CT, MR, PET or MDT in the public KomPACS demo.
+title: Spustit kontrolu
+description: Spusťte novou kontrolu pro plánované CT, MR, PET nebo MDT ve veřejném demu KomPACS.
 sidebar:
   order: 2
 ---
 
-In this tutorial you start a new check in the demo. In a hospital, an HL7 v2 order from NIS starts the check. In the demo, a dialog does the same.
+V tomto návodu spustíte novou kontrolu v demu. V nemocnici kontrolu spustí objednávka HL7 v2 z NIS. V demu totéž udělá dialog.
 
-## Steps
+## Postup
 
-1. Open [demo.kompacs.cz](https://demo.kompacs.cz).
-2. Click "Spustit kontrolu" (start check).
-3. Search for a patient by name or ID. Pick one.
-4. Pick the trigger ("Spouštěč"): "Plánované CT", "Plánované MR", "Plánované PET" or "MDT, indikační seminář".
-5. Pick the date.
-6. Confirm. The new case opens.
+1. Otevřete [demo.kompacs.cz](https://demo.kompacs.cz).
+2. Klikněte na „Spustit kontrolu“.
+3. Najděte pacienta podle jména nebo ID. Vyberte ho.
+4. Vyberte spouštěč: „Plánované CT“, „Plánované MR“, „Plánované PET“ nebo „MDT, indikační seminář“.
+5. Vyberte datum.
+6. Potvrďte. Otevře se nový případ.
 
-## What happens behind the dialog
+## Co se děje za dialogem
 
-In the real system:
+Ve skutečném systému:
 
-1. The API sends an HL7 v2 `ORM^O01` message to the IRIS production.
-2. IRIS converts it via SDA3 to a FHIR `ServiceRequest` on the existing patient.
-3. The API builds the candidate priors, asks the AI judge and writes the case summary.
+1. API pošle zprávu HL7 v2 `ORM^O01` do produkce IRIS.
+2. IRIS ji převede přes SDA3 na FHIR `ServiceRequest` u existujícího pacienta.
+3. API sestaví kandidátní vyšetření, požádá AI o posouzení a zapíše souhrn případu.
 
-In the demo, the browser simulates these steps with synthetic data.
+V demu tyto kroky simuluje prohlížeč se syntetickými daty.
 
-Details: [Data flow](/explanation/data-flow/).
+Podrobnosti: [Tok dat](/explanation/data-flow/).

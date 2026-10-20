@@ -1,31 +1,31 @@
 ---
-title: Impact
-description: Measured results on the 40 KomPACS demo cases, and the estimates behind them.
+title: Dopad
+description: Naměřené výsledky na 40 ukázkových případech KomPACS a odhady.
 sidebar:
   order: 5
 ---
 
-## Measured
+## Naměřeno
 
-The team measured these numbers on 40 demo cases (30 exams: 27 CT, 3 MR; 10 MDT) on 2026-10-17. The source is a pseudonymized hackathon dataset.
+Tým změřil tato čísla na 40 ukázkových případech (30 vyšetření: 27 CT, 3 MR; 10 MDT) dne 17. 10. 2026. Zdrojem je pseudonymizovaný dataset z hackathonu.
 
-| Fact | Count |
+| Fakt | Počet |
 |---|---|
-| Candidate priors found | 286: 198 from NIS, 74 from report text, 14 from insurer data |
-| Relevant priors (AI and Collector) | 127 |
-| Relevant, but not in the hospital PACS | 34, in 24 of 40 cases (60%) |
-| Of these, named only in a report (no NIS record) | 34 (22 place unknown, 12 place known) |
-| Priors known only from insurer data | 14, in 14 cases. None in PACS. The AI marks them uncertain. |
-| Duplicate alerts (same exam within 6 weeks) | 1 |
+| Nalezená kandidátní vyšetření | 286: 198 z NIS, 74 z textu zpráv, 14 z dat pojišťovny |
+| Relevantní vyšetření (AI a koordinátor) | 127 |
+| Relevantní, ale ne v PACS nemocnice | 34, ve 24 ze 40 případů (60 %) |
+| Z nich jen ve zprávě (bez záznamu v NIS) | 34 (22 místo neznámé, 12 místo známé) |
+| Vyšetření známá jen z dat pojišťovny | 14, ve 14 případech. Žádné v PACS. AI je značí jako nejistá. |
+| Upozornění na duplicitu (stejné vyšetření do 6 týdnů) | 1 |
 
-In 6 of 10 cases, the physician would start without a prior they need. A NIS or PACS search finds none of these priors.
+V 6 z 10 případů by lékař začal bez vyšetření, které potřebuje. Vyhledávání v NIS ani v PACS žádné z nich nenajde.
 
-## Estimates
+## Odhady
 
-These values are assumptions. A clinical partner must confirm them.
+Tyto hodnoty jsou předpoklady. Musí je potvrdit klinický partner.
 
-| Assumption | Value | Effect on 40 cases |
+| Předpoklad | Hodnota | Dopad na 40 případů |
 |---|---|---|
-| Manual check per case today | 15 min | 10 h |
-| Check per case with KomPACS | 3 min | 2 h |
-| Calls per missing prior today | 2 | 68 calls. KomPACS drafts the request instead. |
+| Ruční kontrola jednoho případu dnes | 15 min | 10 h |
+| Kontrola jednoho případu s KomPACS | 3 min | 2 h |
+| Telefonátů na jedno chybějící vyšetření dnes | 2 | 68 telefonátů. KomPACS místo nich připraví žádost. |

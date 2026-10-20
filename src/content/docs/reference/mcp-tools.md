@@ -1,58 +1,18 @@
 ---
-title: MCP tools
-description: Reference of the three tools of the pacs-mcp server.
+title: Nástroje MCP
+description: Reference tří nástrojů serveru pacs-mcp.
 sidebar:
   order: 2
 ---
 
-Server name: `PACS Comparator`. Package: `pacs-mcp`. Transport: stdio.
+Server `PACS Comparator`, balíček `pacs-mcp`, transport stdio.
 
-## `search_fhir`
-
-Search a FHIR R4 server.
-
-| Parameter | Type | Description |
+| Nástroj | Parametry | Vrací |
 |---|---|---|
-| `resource_type` | string | FHIR resource type, for example `ImagingStudy` |
-| `params` | object of strings | FHIR search parameters, for example `{"patient": "123"}` |
+| `search_fhir` | `resource_type`, `params` | Až 50 zdrojů FHIR z hledání |
+| `search_reports` | `patient_id`, `query`, `top` (výchozí 5) | `[{resource, score}]`: odkaz na zprávu a kosinovou podobnost. Potřebuje IRIS. 5–17 s na dotaz. |
+| `get_case_summary` | `trigger_id` | `{composition, resources}`: `Composition/summary-<trigger_id>` a všechny odkazované zdroje |
 
-Returns: up to 50 resources from the search set.
+Server nenastartuje bez `PACS_MCP_DATA` (`synthetic` nebo `eu-data-zone`). Kontroluje tvar typu a ID zdroje.
 
-## `search_reports`
-
-Find a patient's report sentences closest to a query. Uses IRIS vector search.
-
-| Parameter | Type | Description |
-|---|---|---|
-| `patient_id` | string | FHIR `Patient.id` |
-| `query` | string | Free text, Czech or English |
-| `top` | integer | Number of results. Default 5. |
-
-Returns: `[{resource, score}]`. `resource` is a FHIR reference to the report. `score` is the cosine similarity.
-
-SQL:
-
-```sql
-SELECT TOP ? Resource, VECTOR_COSINE(Embedding, EMBEDDING(?, 'minilm')) AS Score
-FROM vec.ReportSentence WHERE PatientId = ? ORDER BY Score DESC
-```
-
-Needs IRIS. Without `IRIS_HOST` the tool returns `report search needs IRIS`. One query takes 5–17 s, because `EMBEDDING()` loads the model per call.
-
-## `get_case_summary`
-
-Read the case summary of a trigger and every resource it references.
-
-| Parameter | Type | Description |
-|---|---|---|
-| `trigger_id` | string | Trigger ID |
-
-Returns: `{composition, resources}`. `composition` is `Composition/summary-<trigger_id>`. Without a summary the tool returns a text message.
-
-## Input checks
-
-- A resource type must match `^[A-Z][A-Za-z]+$`.
-- A resource ID must match `^[A-Za-z0-9.-]{1,64}$`.
-- The server does not start without `PACS_MCP_DATA` set to `synthetic` or `eu-data-zone`.
-
-How to run it: [Use the MCP server](/how-to/use-mcp-server/).
+Podrobnosti: [anglická verze](/en/reference/mcp-tools/).

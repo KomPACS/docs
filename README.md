@@ -15,9 +15,9 @@ npx -y pnpm@10 build                              # also checks internal links
 
 ## Structure
 
-- `src/content/docs/`: English pages (default locale). `src/content/docs/cs/`: Czech pages. Every page exists in both.
+- `src/content/docs/`: Czech pages (default locale, `/`). `src/content/docs/en/`: English pages (`/en/`). Every page exists in both.
 - Sections follow Diátaxis: `overview/`, `tutorials/`, `how-to/`, `reference/`, `explanation/`, `decisions/`.
-- `contract/openapi.json`: API contract, copied from `KomPACS/demo`. `starlight-openapi` generates `/reference/api/` from it.
+- `contract/openapi.json`: API contract, copied from `KomPACS/demo`. `starlight-openapi` generates `/reference/api/` and `/en/reference/api/` from it.
 - Diagrams: Mermaid code blocks.
 - Push to `main` deploys to GitHub Pages.
 
