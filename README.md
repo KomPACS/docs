@@ -27,3 +27,5 @@ npx -y pnpm@10 build                              # also checks internal links
 - No patient data. No secrets, credentials, IP addresses or internal host names.
 - Label clinical features "Prototype, not a medical device".
 - Insurer data is optional enrichment: the patient's own consented statement ("Výpis pojištěnce").
+
+Claude Code contributed to this repository.
