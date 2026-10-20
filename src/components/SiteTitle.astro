@@ -6,7 +6,7 @@ const { siteTitleHref } = Astro.locals.starlightRoute
 
 <a href={siteTitleHref} class="kp-title" translate="no">
   <img src={logo.src} alt="" width="28" height="28" />
-  <span class="kp-wordmark"><span class="kp-kom">KOM</span>PACS</span>
+  <span class="kp-wordmark"><span class="kp-kom">Kom</span>PA<span class="kp-c">C</span>S</span>
   <span class="kp-docs">docs</span>
 </a>
 
@@ -26,6 +26,9 @@ const { siteTitleHref } = Astro.locals.starlightRoute
   }
   .kp-kom {
     color: var(--kp-kom);
+  }
+  .kp-c {
+    color: var(--kp-coral);
   }
   .kp-docs {
     padding: 0.1rem 0.5rem;

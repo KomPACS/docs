@@ -1,6 +1,6 @@
-# KOMPACS docs
+# KomPACS docs
 
-Technical documentation of KOMPACS (KOMparátor PACS), Rakathon 2026. Live at https://docs.kompacs.cz.
+Technical documentation of KomPACS (KOMparátor PACS), Rakathon 2026. Live at https://docs.kompacs.cz.
 
 Prototype, not a medical device.
 

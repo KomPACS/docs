@@ -24,7 +24,7 @@ sidebar:
 | Dataset | Pseudonymized FHIR bundles and a PACS availability CSV from the hackathon |
 | Simulated | HL7 orders, MDT list, other hospitals, insurer statement data. FHIR tag `simulated`. |
 | Public | Modrá kniha ČOS PDF, ePACS facility directory |
-| Derived | Everything KOMPACS writes: verdicts, requests, summaries |
+| Derived | Everything KomPACS writes: verdicts, requests, summaries |
 
 ## One check
 

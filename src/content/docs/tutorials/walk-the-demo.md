@@ -1,6 +1,6 @@
 ---
 title: Walk the demo
-description: Open a demo case, read the AI verdicts and handle a missing prior in the public KOMPACS demo.
+description: Open a demo case, read the AI verdicts and handle a missing prior in the public KomPACS demo.
 sidebar:
   order: 1
 ---
@@ -58,7 +58,7 @@ Open the "Přehled" tab. It shows studies per modality and year, and how many ar
 ## What you learned
 
 - A trigger starts a check.
-- KOMPACS finds priors in NIS records, report text and insurer data.
+- KomPACS finds priors in NIS records, report text and insurer data.
 - The AI judge gives a verdict with evidence. The Collector decides.
 - A missing prior becomes a request. The arrival in PACS closes it.
 

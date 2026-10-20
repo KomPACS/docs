@@ -1,11 +1,11 @@
 ---
 title: Napojení FHIR serveru
-description: Nastavení API a MCP serveru KOMPACS na FHIR R4 server a nahrání záznamu pacienta.
+description: Nastavení API a MCP serveru KomPACS na FHIR R4 server a nahrání záznamu pacienta.
 sidebar:
   order: 4
 ---
 
-KOMPACS čte a zapisuje přes FHIR R4 REST. Referenční server je IRIS for Health.
+KomPACS čte a zapisuje přes FHIR R4 REST. Referenční server je IRIS for Health.
 
 | Proměnná | Použití |
 |---|---|

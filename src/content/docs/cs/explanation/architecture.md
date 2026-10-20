@@ -1,11 +1,11 @@
 ---
 title: Architektura
-description: Komponenty KOMPACS a jejich propojení.
+description: Komponenty KomPACS a jejich propojení.
 sidebar:
   order: 1
 ---
 
-KOMPACS má tři části: IRIS for Health, API a webové UI. IRIS drží veškerý stav. API je v produkci bezstavové.
+KomPACS má tři části: IRIS for Health, API a webové UI. IRIS drží veškerý stav. API je v produkci bezstavové.
 
 ```mermaid
 flowchart LR
@@ -14,7 +14,7 @@ flowchart LR
     PACS["PACS"]
     INS["Výpis pojišťovny"]
   end
-  subgraph STACK["Sada KOMPACS"]
+  subgraph STACK["Sada KomPACS"]
     subgraph IRIS["IRIS for Health"]
       direction TB
       PROD["Produkce"] --> FHIR[("FHIR R4")] --> SQL[("SQL + vektory")]

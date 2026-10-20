@@ -5,7 +5,7 @@ sidebar:
   order: 3
 ---
 
-KOMPACS must know whether the images of each exam are in PACS. A non-FHIR feed delivers this fact. The POC uses a CSV file.
+KomPACS must know whether the images of each exam are in PACS. A non-FHIR feed delivers this fact. The POC uses a CSV file.
 
 ## Path
 

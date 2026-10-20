@@ -5,7 +5,7 @@ sidebar:
   order: 2
 ---
 
-Plánované vyšetření přijde do KOMPACS jako objednávka HL7 v2 `ORM^O01`. IRIS ji vestavěnou cestou převede na FHIR `ServiceRequest`.
+Plánované vyšetření přijde do KomPACS jako objednávka HL7 v2 `ORM^O01`. IRIS ji vestavěnou cestou převede na FHIR `ServiceRequest`.
 
 ```text
 NIS/RIS ──ORM^O01──> HL7.Orders.In ──> ZHL7.OrderToSDA ──> SDA3 ──> ZHL7.SDA3ToFHIR ──> FHIR ServiceRequest

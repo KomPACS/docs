@@ -1,6 +1,6 @@
 ---
 title: Projít demo
-description: Otevřete ukázkový případ, přečtěte posouzení AI a vyřiďte chybějící vyšetření ve veřejném demu KOMPACS.
+description: Otevřete ukázkový případ, přečtěte posouzení AI a vyřiďte chybějící vyšetření ve veřejném demu KomPACS.
 sidebar:
   order: 1
 ---
@@ -58,7 +58,7 @@ Otevřete záložku „Přehled“. Ukazuje vyšetření podle modality a roku a
 ## Co jste se naučili
 
 - Spouštěč zahájí kontrolu.
-- KOMPACS najde vyšetření v NIS, v textu zpráv a v datech pojišťovny.
+- KomPACS najde vyšetření v NIS, v textu zpráv a v datech pojišťovny.
 - AI posoudí relevanci s důkazy. Rozhodne koordinátor/ka.
 - Chybějící vyšetření se stane žádostí. Doručení do PACS ji uzavře.
 

@@ -1,6 +1,6 @@
 ---
 title: Dopad
-description: Naměřené výsledky na 40 ukázkových případech KOMPACS a odhady.
+description: Naměřené výsledky na 40 ukázkových případech KomPACS a odhady.
 sidebar:
   order: 5
 ---
@@ -27,5 +27,5 @@ Tyto hodnoty jsou předpoklady. Musí je potvrdit klinický partner.
 | Předpoklad | Hodnota | Dopad na 40 případů |
 |---|---|---|
 | Ruční kontrola jednoho případu dnes | 15 min | 10 h |
-| Kontrola jednoho případu s KOMPACS | 3 min | 2 h |
-| Telefonátů na jedno chybějící vyšetření dnes | 2 | 68 telefonátů. KOMPACS místo nich připraví žádost. |
+| Kontrola jednoho případu s KomPACS | 3 min | 2 h |
+| Telefonátů na jedno chybějící vyšetření dnes | 2 | 68 telefonátů. KomPACS místo nich připraví žádost. |

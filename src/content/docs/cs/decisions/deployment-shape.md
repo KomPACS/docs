@@ -1,6 +1,6 @@
 ---
 title: Jedna sada na nemocnici, vlastní ji integrátor
-description: KOMPACS běží jako jedna sada kontejnerů na nemocnici, on-premise nebo ve spravovaném tenantu v EU cloudu.
+description: KomPACS běží jako jedna sada kontejnerů na nemocnici, on-premise nebo ve spravovaném tenantu v EU cloudu.
 ---
 
 - Stejná sada kontejnerů (IRIS for Health, API, UI) pro každou nemocnici.

@@ -1,6 +1,6 @@
 ---
 title: Bezpečnost a ochrana dat
-description: Jak KOMPACS zachází s daty pacientů, přístupy a dodavatelským řetězcem.
+description: Jak KomPACS zachází s daty pacientů, přístupy a dodavatelským řetězcem.
 sidebar:
   order: 3
 ---

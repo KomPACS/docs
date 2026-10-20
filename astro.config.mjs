@@ -45,7 +45,7 @@ export default defineConfig({
   },
   integrations: [
     starlight({
-      title: 'KOMPACS docs',
+      title: 'KomPACS docs',
       logo: { src: './src/assets/logo.svg' },
       favicon: '/favicon.svg',
       head: [
@@ -59,7 +59,7 @@ export default defineConfig({
           },
         },
       ],
-      description: 'KOMPACS technical documentation. Prototype, not a medical device.',
+      description: 'KomPACS technical documentation. Prototype, not a medical device.',
       defaultLocale: 'root',
       locales: {
         root: { label: 'English', lang: 'en' },

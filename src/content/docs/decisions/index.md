@@ -1,6 +1,6 @@
 ---
 title: Decisions
-description: Architecture decision records of KOMPACS.
+description: Architecture decision records of KomPACS.
 sidebar:
   order: 0
 ---

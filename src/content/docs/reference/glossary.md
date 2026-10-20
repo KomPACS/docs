@@ -1,6 +1,6 @@
 ---
 title: Glossary
-description: KOMPACS terms with their Czech UI labels.
+description: KomPACS terms with their Czech UI labels.
 sidebar:
   order: 4
 ---
@@ -21,7 +21,7 @@ One meaning per term. The Czech column is the UI label.
 | Baseline | The prior taken before treatment started. Used to measure response. | vstupní vyšetření |
 | Comparison | Reading a new exam against priors to see change. | srovnání |
 | Index date | Date of the first record of the patient's cancer. The lookback window starts from it. | datum prvozáchytu |
-| Case summary | KOMPACS output: patient context, relevant priors, their status, missing items, next steps. | souhrn případu |
+| Case summary | KomPACS output: patient context, relevant priors, their status, missing items, next steps. | souhrn případu |
 | Report | Text written by a physician. A radiology report is the text reading of an exam. | zpráva, popis |
 | Ordering person | The person who orders the exam or starts the check. | indikující osoba |
 
@@ -65,14 +65,14 @@ One meaning per term. The Czech column is the UI label.
 |---|---|
 | NIS | *Nemocniční informační systém*, hospital information system (HIS). |
 | RIS | Radiology information system. Holds orders and schedules. |
-| FHIR | HL7 standard for health data exchange. REST and JSON. KOMPACS uses R4. |
+| FHIR | HL7 standard for health data exchange. REST and JSON. KomPACS uses R4. |
 | HL7 v2 | Pipe-delimited message standard. Common in Czech hospitals. |
 | ORM^O01 | HL7 v2 order message. Scheduled exams arrive as ORM^O01. |
 | CDA | HL7 XML clinical document standard. |
 | SDA | InterSystems internal pivot format. IRIS converts HL7 v2 / CDA → SDA → FHIR. |
 | Production | IRIS interoperability pipeline: business services (in), processes (logic), operations (out). |
-| FHIR SQL Builder | IRIS tool that projects FHIR resources into SQL tables. KOMPACS schema: `pacs`. |
+| FHIR SQL Builder | IRIS tool that projects FHIR resources into SQL tables. KomPACS schema: `pacs`. |
 | Embedding | A vector of numbers that holds the meaning of a text. |
 | Vector search | Find the texts whose embeddings are closest to the query, with `VECTOR_COSINE` in IRIS SQL. |
-| MCP | Model Context Protocol. Lets an LLM client call tools. KOMPACS server: `pacs-mcp`. |
+| MCP | Model Context Protocol. Lets an LLM client call tools. KomPACS server: `pacs-mcp`. |
 | EHDS | European Health Data Space, Regulation (EU) 2025/327. |

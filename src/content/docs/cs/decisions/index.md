@@ -1,6 +1,6 @@
 ---
 title: Rozhodnutí
-description: Záznamy architektonických rozhodnutí KOMPACS.
+description: Záznamy architektonických rozhodnutí KomPACS.
 sidebar:
   order: 0
 ---

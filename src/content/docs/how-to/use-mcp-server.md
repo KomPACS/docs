@@ -1,11 +1,11 @@
 ---
 title: Use the MCP server
-description: Run pacs-mcp and connect an MCP client to query KOMPACS case data over FHIR and IRIS vectors.
+description: Run pacs-mcp and connect an MCP client to query KomPACS case data over FHIR and IRIS vectors.
 sidebar:
   order: 5
 ---
 
-`pacs-mcp` is a standalone MCP server. It exposes three tools over FHIR R4 REST and IRIS vector search. It does not call the KOMPACS API.
+`pacs-mcp` is a standalone MCP server. It exposes three tools over FHIR R4 REST and IRIS vector search. It does not call the KomPACS API.
 
 :::danger[Patient data]
 The tools return report text. Connect a client to real patient data only if the client sends text to an EU Data Zone LLM. Use test data with any other client.
